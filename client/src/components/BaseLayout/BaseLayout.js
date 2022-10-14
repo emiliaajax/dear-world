@@ -1,4 +1,4 @@
-import { Stack } from "@mui/system";
+// import { Stack } from "@mui/system";
 import React from "react";
 
 class BaseLayout extends React.Component {
@@ -9,12 +9,14 @@ class BaseLayout extends React.Component {
 
   render() { 
     return (
-      <Stack 
-        direction='row' 
-        spacing={1} 
-        sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '20px' }}>
-          {this.children}
-      </Stack>
+      <>
+        {/* <Stack
+          direction='row' 
+          spacing={1} 
+          sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '20px' }}> */}
+            {this.children}
+        {/* </Stack> */}
+      </>
     )
   }
 }
