@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import BaseLayout from './components/BaseLayout/BaseLayout.js'
 import PostForm from './components/PostForm/PostForm.js'
 
 class App extends Component {
@@ -6,12 +7,14 @@ class App extends Component {
   render() { 
     return (
       <div className="App">
-      <header className="App-header">
-        <div>
-          <PostForm></PostForm>
-        </div>
-      </header>
-    </div>
+        <header className="App-header">
+          <div>
+            <BaseLayout>
+              <PostForm></PostForm>
+            </BaseLayout>
+          </div>
+        </header>
+      </div>
     )
   }
 }

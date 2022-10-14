@@ -31,7 +31,7 @@ class PostForm extends React.Component {
     return (
       <>
         <form onSubmit={this.onSubmit}>
-          <Stack spacing={1}>
+          <Stack spacing={2}>
             <Stack direction='row' spacing={1}>
               <TextField 
                 label='Författare' 
