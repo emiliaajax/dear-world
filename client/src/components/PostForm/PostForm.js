@@ -16,9 +16,7 @@ class PostForm extends React.Component {
   }
 
   onSubmit = (event) => {
-    // this.setState(() => ({})
     event.preventDefault()
-    
     console.log(this.state)
   }
 
@@ -35,12 +33,40 @@ class PostForm extends React.Component {
         <form onSubmit={this.onSubmit}>
           <Stack spacing={1}>
             <Stack direction='row' spacing={1}>
-              <TextField label='Författare' size='small' name='author' value={this.state.author} onChange={this.onChange}></TextField>
-              <TextField label='Ämne' size='small' name='subject' value={this.state.subject} onChange={this.onChange}></TextField>
+              <TextField 
+                label='Författare' 
+                size='small' 
+                name='author' 
+                value={this.state.author} 
+                onChange={this.onChange}>
+              </TextField>
+              <TextField 
+                label='Ämne' 
+                size='small' 
+                name='subject' 
+                value={this.state.subject} 
+                onChange={this.onChange}>
+              </TextField>
             </Stack>
-            <TextField label='Rubrik' size='small' name='title' value={this.state.title} onChange={this.onChange}></TextField>
-            <TextField multiline rows={10} name='text' value={this.state.text} onChange={this.onChange}></TextField> 
-            <Button type='submit' variant='contained' >Text</Button>
+            <TextField 
+              label='Rubrik' 
+              size='small' 
+              name='title' 
+              value={this.state.title} 
+              onChange={this.onChange}>
+            </TextField>
+            <TextField 
+              multiline 
+              rows={10} 
+              name='text' 
+              value={this.state.text} 
+              onChange={this.onChange}>
+            </TextField> 
+            <Button 
+              type='submit'
+              variant='contained'>
+                Text
+            </Button>
           </Stack>
         </form>
       </>
