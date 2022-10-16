@@ -1,4 +1,4 @@
-// import { Stack } from "@mui/system";
+import { Grid } from "@mui/material";
 import React from "react";
 
 class BaseLayout extends React.Component {
@@ -10,12 +10,14 @@ class BaseLayout extends React.Component {
   render() { 
     return (
       <>
-        {/* <Stack
-          direction='row' 
+        <Grid 
+          container
           spacing={1} 
-          sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '20px' }}> */}
-            {this.children}
-        {/* </Stack> */}
+          sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '20px' }}>
+            <Grid item xs={12}>
+              {this.children}
+            </Grid>
+        </Grid>
       </>
     )
   }

@@ -32,11 +32,12 @@ class PostForm extends React.Component {
       <>
         <form onSubmit={this.onSubmit}>
           <Grid container spacing={2}>
-            <Grid item xs={8}>
+            <Grid item xs={6}>
               <Stack spacing={2}>
               <Grid container spacing={1}>
-                <Grid item xs={4}>
-                  <TextField 
+                <Grid item xs={6}>
+                  <TextField
+                    fullWidth
                     label='Författare' 
                     size='small' 
                     name='author' 
@@ -44,8 +45,9 @@ class PostForm extends React.Component {
                     onChange={this.onChange}>
                   </TextField>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs={6}>
                   <TextField 
+                    fullWidth
                     label='Ämne' 
                     size='small' 
                     name='subject' 
@@ -74,7 +76,7 @@ class PostForm extends React.Component {
               <Button 
                 type='submit'
                 variant='contained'>
-                  Text
+                  Publicera
               </Button>
             </Grid>
           </Grid>
