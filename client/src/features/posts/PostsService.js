@@ -1,4 +1,4 @@
-
+import fetch from 'node-fetch'
 
 export class PostsService {
   async getAllPosts() {
