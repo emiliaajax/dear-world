@@ -4,11 +4,11 @@ const schema = new mongoose.Schema({
   title: {
     type: String,
     trim: true,
-    maxlength: [256, 'Titeln måste vara mindre än 256 tecken']
+    // maxlength: [256, 'Titeln måste vara mindre än 256 tecken']
   },
   author: {
     type: String,
-    maxlength: [256, 'Författarnamn måste vara mindre än 256 tecken']
+    // maxlength: [256, 'Författarnamn måste vara mindre än 256 tecken']
   },
   dateOfCreation: {
     type: Date
@@ -16,7 +16,7 @@ const schema = new mongoose.Schema({
   text: {
     type: String,
     trim: true,
-    maxlength: [500, 'Texten måste vara mer än 500 tecken']
+    // maxlength: [500, 'Texten måste vara mer än 500 tecken']
   }
 }, {
   timestamps: true,
