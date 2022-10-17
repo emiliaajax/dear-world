@@ -10,9 +10,6 @@ const schema = new mongoose.Schema({
     type: String,
     // maxlength: [256, 'Författarnamn måste vara mindre än 256 tecken']
   },
-  dateOfCreation: {
-    type: Date
-  },
   text: {
     type: String,
     trim: true,

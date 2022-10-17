@@ -52,12 +52,12 @@ export class PostsController {
       
       await post.save()
 
-      // const location = new URL(
-      //   `${req.protocol}://${req.get('host')}${req.baseUrl}/${post._id}`
-      // )
+      const location = new URL(
+        `${req.protocol}://${req.get('host')}${req.baseUrl}/${post._id}`
+      )
 
       res
-        // .location(location.href)
+        .location(location.href)
         .status(201)
         .json({
           id: post.id
