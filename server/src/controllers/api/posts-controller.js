@@ -20,24 +20,24 @@ export class PostsController {
     }
   }
 
-  // /**
-  //  * Sends a JSON response containing one post.
-  //  *
-  //  * @param {object} req Express request object.
-  //  * @param {object} res Express response object.
-  //  * @param {Function} next Express next middleware function.
-  //  */
-  // async findPost (req, res, next, id) {
-  //   try {
-  //     const post = await Post.findById(id)
+  /**
+   * Sends a JSON response containing one post.
+   *
+   * @param {object} req Express request object.
+   * @param {object} res Express response object.
+   * @param {Function} next Express next middleware function.
+   */
+  async findPost (req, res, next, id) {
+    try {
+      const post = await Post.findById(id)
 
-  //     res
-  //       .status(201)
-  //       .json(post)
-  //   } catch (error) {
-  //     next(error)
-  //   }
-  // }
+      res
+        .status(201)
+        .json(post)
+    } catch (error) {
+      next(error)
+    }
+  }
 
   /**
    * Creates a new post.
