@@ -1,4 +1,3 @@
-
 import { Post } from '../../models/post.js'
 
 export class PostsController {
@@ -21,6 +20,13 @@ export class PostsController {
     }
   }
 
+  /**
+   * Sends a JSON response containing one post.
+   *
+   * @param {object} req Express request object.
+   * @param {object} res Express response object.
+   * @param {Function} next Express next middleware function.
+   */
   async findPost (req, res, next, id) {
     try {
       const post = await Post.findById(id)
