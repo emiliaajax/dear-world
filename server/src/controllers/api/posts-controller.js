@@ -46,7 +46,7 @@ export class PostsController {
    * @param {object} res Express response object.
    * @param {Function} next Express next middleware function.
    */
-  async createProfile (req, res, next) {
+  async createPost (req, res, next) {
     try {
       const post = new Post(req.body)
       
