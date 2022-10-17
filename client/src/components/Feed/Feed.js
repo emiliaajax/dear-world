@@ -7,30 +7,41 @@ class Feed extends React.Component {
     super()
 
     this.state = {}
-    this.posts = [{
-      title: 'This is a title',
-      date: '16 October 2022',
-      author: 'Emilia',
-      text: 'This a text'
-    }]
+    this.posts = [
+      {
+        id: '124dsA',
+        title: 'This is a title',
+        date: '16 October 2022',
+        author: 'Emilia',
+        text: 'This is a text'
+      },
+      {
+        id: '124dsH',
+        title: 'This is another title',
+        date: '16 Mars 2022',
+        author: 'Andreas',
+        text: 'This is another text'
+      }
+    ]
   }
 
-  getAllPosts () {
-
+  renderAllPosts() {
+    return this.posts?.map((post) => {
+      return (
+        <Post key={post.id} post={post}></Post>
+      )
+    })
   }
+
   render() { 
     return (
       <>
         <Stack>
-          {this.posts?.map((post) => {
-            return (
-              <Post post={post}></Post>
-            )
-          })}
+          {this.renderAllPosts()}
         </Stack>
       </>
     )
   }
 }
  
-export default Feed;
+export default Feed
