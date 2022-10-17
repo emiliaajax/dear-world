@@ -3,16 +3,16 @@ import fetch from 'node-fetch'
 export class PostsService {
   async getAllPosts() {
     const allPosts = await fetch(process.env.REACT_APP_POSTS_API)
-    return allPosts.json()
+    return JSON.parse(allPosts)
   }
 
   async getPostById (id) {
-    const post = await fetch(process.env.REACT_APP_POSTS_API + `/${id}`)
-    return post.json()
+    const post = await fetch(process.env.REACT_APP_POSTS_API + `${id}`)
+    return JSON.parse(post)
   }
 
   async createPost() {
-
+    
   }
 }
  
