@@ -1,9 +1,9 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
 
 export class PostsService {
   async getAllPosts() {
     const allPosts = await fetch(process.env.REACT_APP_POSTS_API)
-    return JSON.parse(allPosts)
+    return await allPosts.json()
   }
 
   async getPostById (id) {
@@ -12,7 +12,7 @@ export class PostsService {
   }
 
   async createPost() {
-    
+
   }
 }
  
