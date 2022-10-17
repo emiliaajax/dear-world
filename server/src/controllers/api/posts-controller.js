@@ -38,4 +38,32 @@ export class PostsController {
       next(error)
     }
   }
+
+  /**
+   * Creates a new post.
+   *
+   * @param {object} req Express request object.
+   * @param {object} res Express response object.
+   * @param {Function} next Express next middleware function.
+   */
+  async createProfile (req, res, next) {
+    try {
+      const post = new Post(req.body)
+      
+      await post.save()
+
+      const location = new URL(
+        `${req.protocol}://${req.get('host')}${req.baseUrl}/${post._id}`
+      )
+
+      res
+        .location(location.href)
+        .status(201)
+        .json({
+          id: post.id
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
