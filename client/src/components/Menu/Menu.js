@@ -1,6 +1,5 @@
 import { AppBar, Box, List, ListItemButton, ListItemIcon, Toolbar, Typography } from '@mui/material'
 import React from 'react'
-import HomeIcon from '@mui/icons-material/Home'
 import AddIcon from '@mui/icons-material/Add'
 
 class Menu extends React.Component {
@@ -8,19 +7,19 @@ class Menu extends React.Component {
     return (
       <>
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
+          <AppBar position="static" sx={{ backgroundColor: '#FAFAFA', boxShadow: '0px 0px 5px #D4D4D4' }}>
             <Toolbar>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Talk It Out
+              <Typography component='a' href='/' variant='h6' sx={{ flexGrow: 1, color: '#949494', textDecoration: 'none' }}>
+                DEAR WORLD
               </Typography>
               <List component="nav" aria-label="main mailbox folders">
-                <ListItemButton
+                {/* <ListItemButton
                   component='a'
                   href='/'>          
                   <ListItemIcon>
                     <HomeIcon />
                   </ListItemIcon>
-                </ListItemButton>
+                </ListItemButton> */}
                 <ListItemButton
                   component='a'
                   href='/create'>          

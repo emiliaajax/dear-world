@@ -3,6 +3,7 @@ import React from 'react'
 import BaseLayout from './components/BaseLayout/BaseLayout.js'
 import Home from './components/Home/Home.js'
 import PostForm from './components/PostForm/PostForm.js'
+import FullPost from './components/FullPost/FullPost.js'
 
 class App extends React.Component {
   render() { 
@@ -11,12 +12,19 @@ class App extends React.Component {
         <div className="App">
           <Routes>
             <Route 
+              exact
               path='/'
               element={<BaseLayout><Home></Home></BaseLayout>}
             />
             <Route
+              exact
               path='/create'
               element={<BaseLayout><PostForm></PostForm></BaseLayout>}
+            />
+            <Route
+              exact
+              path='/:id'
+              element={<BaseLayout><FullPost></FullPost></BaseLayout>}
             />
           </Routes>
         </div>

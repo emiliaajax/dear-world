@@ -5,9 +5,9 @@ import Stack from '@mui/material/Stack'
 import PostsService from '../../features/posts/PostsService'
 
 class PostForm extends React.Component {
-  constructor () {
-    super()
-
+  constructor (props) {
+    super(props)
+    console.log(props)
     this.state = { 
       author: '',
       subject: '',
@@ -33,8 +33,8 @@ class PostForm extends React.Component {
     return (
       <>
         <form onSubmit={this.onSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
+          <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto'}}>
+            <Grid item xs={10}>
               <Stack spacing={2}>
               <Grid container spacing={1}>
                 <Grid item xs={6}>

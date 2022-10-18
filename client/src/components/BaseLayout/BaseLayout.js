@@ -5,11 +5,11 @@ import Menu from '../Menu/Menu.js'
 
 class BaseLayout extends React.Component {
   constructor (props) {
-    super()
+    super(props)
     this.children = props.children ? props.children : null
   }
 
-  render() { 
+  render() {
     return (
       <>
         <Stack>
