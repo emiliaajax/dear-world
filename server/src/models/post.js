@@ -6,6 +6,10 @@ const schema = new mongoose.Schema({
     trim: true,
     maxlength: [256, 'Titeln måste vara mindre än 256 tecken']
   },
+  subject: {
+    type: String,
+    maxlength: [256, 'Författarnamn måste vara mindre än 256 tecken']
+  },
   author: {
     type: String,
     maxlength: [256, 'Författarnamn måste vara mindre än 256 tecken']
