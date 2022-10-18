@@ -20,6 +20,23 @@ export class PostsController {
     }
   }
 
+  async loadPost (req, res, next, id) {
+    try {
+      const post = await Post.findById(id)
+
+      if (!post) {
+        return next(createError(404))
+      }
+
+      req.post = post
+
+      next()
+    } catch (error) {
+      next(error)
+    }
+  }
+
+
   /**
    * Sends a JSON response containing one post.
    *
@@ -27,16 +44,10 @@ export class PostsController {
    * @param {object} res Express response object.
    * @param {Function} next Express next middleware function.
    */
-  async findPost (req, res, next, id) {
-    try {
-      const post = await Post.findById(id)
-
-      res
-        .status(201)
-        .json(post)
-    } catch (error) {
-      next(error)
-    }
+  async findPost (req, res, next) {
+    res
+      .status(200)
+      .json(req.post)
   }
 
   /**
