@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 import { Button, Grid } from "@mui/material"
 import Stack from '@mui/material/Stack'
+import PostsService from '../../features/posts/PostsService'
 
 class PostForm extends React.Component {
   constructor () {
@@ -17,7 +18,8 @@ class PostForm extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
+    const postsService = new PostsService()
+    postsService.createPost(this.state)
   }
 
   onChange = (event) => {

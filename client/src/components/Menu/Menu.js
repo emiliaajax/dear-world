@@ -1,9 +1,9 @@
-import { AppBar, Toolbar, Typography } from "@mui/material"
-import { Box } from "@mui/system"
-import React from "react"
+import { AppBar, Box, List, ListItemButton, ListItemIcon, Toolbar, Typography } from '@mui/material'
+import React from 'react'
+import HomeIcon from '@mui/icons-material/Home'
+import AddIcon from '@mui/icons-material/Add'
 
 class Menu extends React.Component {
-  state = {  } 
   render() { 
     return (
       <>
@@ -13,6 +13,22 @@ class Menu extends React.Component {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 Talk It Out
               </Typography>
+              <List component="nav" aria-label="main mailbox folders">
+                <ListItemButton
+                  component='a'
+                  href='/'>          
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                </ListItemButton>
+                <ListItemButton
+                  component='a'
+                  href='/create'>          
+                  <ListItemIcon>
+                    <AddIcon />
+                  </ListItemIcon>
+                </ListItemButton>
+              </List>
             </Toolbar>
           </AppBar>
         </Box>

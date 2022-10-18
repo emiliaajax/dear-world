@@ -1,17 +1,26 @@
-import { Component } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from 'react'
 import BaseLayout from './components/BaseLayout/BaseLayout.js'
 import Home from './components/Home/Home.js'
+import PostForm from './components/PostForm/PostForm.js'
 
-class App extends Component {
+class App extends React.Component {
   render() { 
     return (
-      <div className="App">
-        <header className="App-header">
-          <BaseLayout>
-            <Home></Home>
-          </BaseLayout>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route 
+              path='/'
+              element={<BaseLayout><Home></Home></BaseLayout>}
+            />
+            <Route
+              path='/create'
+              element={<BaseLayout><PostForm></PostForm></BaseLayout>}
+            />
+          </Routes>
+        </div>
+      </Router>
     )
   }
 }
