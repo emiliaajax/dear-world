@@ -7,7 +7,7 @@ class Post extends React.Component {
     this.title = props.post.title
     this.author = props.post.author
     this.date = props.post.date
-    this.text = props.post.text.slice(0, 400) + ' ...'
+    this.text = props.post.text.slice(0, 520) + ' ...'
   }
 
   openPost() {

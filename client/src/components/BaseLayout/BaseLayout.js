@@ -13,7 +13,7 @@ class BaseLayout extends React.Component {
         <Grid 
           container
           spacing={1} 
-          sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '20px' }}>
+          sx={{ paddingTop: '20px', paddingBottom: '10px', paddingLeft: '50px', paddingRight: '50px' }}>
             <Grid item xs={12}>
               {this.children}
             </Grid>

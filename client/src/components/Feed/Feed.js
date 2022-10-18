@@ -1,28 +1,31 @@
-import { Stack } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import Post from '../Post/Post.js'
-// import { PostsSlice } from '../../features/posts/PostsSlice.js'
 import PostsService from '../../features/posts/PostsService.js'
 
 class Feed extends React.Component {
   constructor () {
     super()
 
-    this.state = {}
-    // this.posts = []
-    this.getAllPosts()
+    this.state = {
+      posts: []
+    }
+  }
+
+  async componentDidMount() {
+    this.setState({ posts: await this.getAllPosts() })
   }
 
   async getAllPosts() {
-    this.posts = await new PostsService().getAllPosts()
-    console.log(this.posts)
-    this.setState(this.posts)
+    return await new PostsService().getAllPosts()
   }
 
   renderAllPosts() {
-    return this.posts?.map((post) => {
+    return this.state.posts?.map((post) => {
       return (
-        <Post key={post._id} post={post}></Post>
+        <Grid item xs={4}>
+          <Post key={post._id} post={post}></Post>
+        </Grid>
       )
     })
   }
@@ -30,9 +33,9 @@ class Feed extends React.Component {
   render() { 
     return (
       <>
-        <Stack>
+        <Grid container spacing={5}>
           {this.renderAllPosts()}
-        </Stack>
+        </Grid>
       </>
     )
   }
