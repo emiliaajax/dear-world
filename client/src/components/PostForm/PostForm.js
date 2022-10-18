@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField'
 import { Button, Grid } from "@mui/material"
 import Stack from '@mui/material/Stack'
 import PostsService from '../../features/posts/PostsService'
+import { emojiProvider } from 'emoji-provider'
 
 class PostForm extends React.Component {
   constructor (props) {
@@ -17,6 +18,7 @@ class PostForm extends React.Component {
 
   onSubmit = async (event) => {
     event.preventDefault()
+    this.state.text = emojiProvider.replaceEmoticonsWithEmojis(this.state.text)
     const postsService = new PostsService()
     const response = await postsService.createPost(this.state)
     this.id = await response.id

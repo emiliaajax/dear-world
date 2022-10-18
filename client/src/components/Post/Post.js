@@ -1,6 +1,5 @@
 import { Card, CardActionArea, CardContent, CardHeader, Typography } from '@mui/material'
 import React from 'react'
-// import { Navigate } from 'react-router-dom'
 
 class Post extends React.Component {
   constructor (props) {
