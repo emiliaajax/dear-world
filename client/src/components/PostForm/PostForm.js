@@ -7,20 +7,26 @@ import PostsService from '../../features/posts/PostsService'
 class PostForm extends React.Component {
   constructor (props) {
     super(props)
-    console.log(props)
     this.state = { 
       author: '',
       subject: '',
       title: '',
       text: ''
-     } 
+    }
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault()
     const postsService = new PostsService()
-    postsService.createPost(this.state)
-  }
+    const response = await postsService.createPost(this.state)
+    this.id = await response.id
+    this.setState({ 
+      author: '',
+      subject: '',
+      title: '',
+      text: ''
+    })
+    }
 
   onChange = (event) => {
     this.setState((previousState) => ({
@@ -29,10 +35,10 @@ class PostForm extends React.Component {
     }))
   }
 
-  render() { 
+  render() {
     return (
       <>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={(event) => this.onSubmit(event)}>
           <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto'}}>
             <Grid item xs={10}>
               <Stack spacing={2}>
@@ -75,9 +81,10 @@ class PostForm extends React.Component {
               </Stack>
             </Grid>
             <Grid item xs={2}>
-              <Button 
+              <Button
                 type='submit'
-                variant='contained'>
+                variant='contained'
+                sx={{ backgroundColor: '#222' }}>
                   Publicera
               </Button>
             </Grid>

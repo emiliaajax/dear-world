@@ -18,7 +18,7 @@ class BaseLayout extends React.Component {
         <Grid 
           container
           spacing={1} 
-          sx={{ paddingTop: '50px', paddingBottom: '10px', paddingLeft: '50px', paddingRight: '50px' }}>
+          sx={{ paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '50px' }}>
             <Grid item xs={12}>
               {this.children}
             </Grid>

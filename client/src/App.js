@@ -26,6 +26,10 @@ class App extends React.Component {
               path='/:id'
               element={<BaseLayout><FullPost></FullPost></BaseLayout>}
             />
+            <Route
+              path="*"
+              element={<BaseLayout><Home></Home></BaseLayout>}
+            />
           </Routes>
         </div>
       </Router>

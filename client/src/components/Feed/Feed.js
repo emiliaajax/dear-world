@@ -23,8 +23,8 @@ class Feed extends React.Component {
   renderAllPosts() {
     return this.state.posts?.map((post) => {
       return (
-        <Grid item xs={4}>
-          <Post key={post._id} post={post}></Post>
+        <Grid key={post._id} item xs={4}>
+          <Post post={post}></Post>
         </Grid>
       )
     })
