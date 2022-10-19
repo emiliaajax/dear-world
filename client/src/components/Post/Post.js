@@ -16,7 +16,7 @@ class Post extends React.Component {
   render() { 
     return (
       <> 
-        <Card variant='outlined'>
+        <Card variant='outlined' sx={{ border: '1px solid #e7e7e7' }}>
           <CardActionArea href={this.id}>
             <CardHeader
               title={this.title}

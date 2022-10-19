@@ -35,8 +35,7 @@ class FullPost extends React.Component {
           {this.state.post.text}
         </Typography>
         <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5 }}/>
-        <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '30px'}}>COMMENTS</Typography>
-        <Typography variant='h6' sx={{ paddingBottom: '10px'}}>Leave a comment</Typography>
+        <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '50px'}}>COMMENTS</Typography>
         <CommentForm></CommentForm>
        </Paper>
       </>
