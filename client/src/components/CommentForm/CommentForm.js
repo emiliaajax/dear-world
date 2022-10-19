@@ -19,48 +19,51 @@ class CommentForm extends React.Component {
   }
 
   onSubmit = (event) => {
+    event.preventDefault()
     // To be implemented
   }
 
   render() { 
     return (
       <>
-        <Stack spacing={2} sx={{ maxWidth: '600px' }}>
-          <TextField
-            name='name'
-            value={this.state.name}
-            onChange={this.onChange}
-            placeholder='Name'
-            size='small' 
-            sx={{ 
-              backgroundColor: 'rgb(242, 242, 242)',
-              '.MuiOutlinedInput-notchedOutline': { 
-                border: 'none' 
-              },
-              maxWidth: '400px'
-            }}>
-          </TextField>
-          <TextField
-            name='comment'
-            value={this.state.comment}
-            onChange={this.onChange}
-            placeholder='Comment'
-            multiline
-            rows={10} 
-            sx={{ 
-              backgroundColor: 'rgb(242, 242, 242)',
-              '.MuiOutlinedInput-notchedOutline': { 
-                border: 'none' 
-              }
-            }}>
-          </TextField>
-          <Button
-            type='submit'
-            variant='contained'
-            sx={{ maxWidth: '180px', backgroundColor: '#222' }}>
-              Submit comment
-          </Button>
-        </Stack>
+      <form onSubmit={this.onSubmit}>
+          <Stack spacing={2} sx={{ maxWidth: '600px' }}>
+            <TextField
+              name='name'
+              value={this.state.name}
+              onChange={this.onChange}
+              placeholder='Name'
+              size='small' 
+              sx={{ 
+                backgroundColor: 'rgb(242, 242, 242)',
+                '.MuiOutlinedInput-notchedOutline': { 
+                  border: 'none' 
+                },
+                maxWidth: '400px'
+              }}>
+            </TextField>
+            <TextField
+              name='comment'
+              value={this.state.comment}
+              onChange={this.onChange}
+              placeholder='Comment'
+              multiline
+              rows={10} 
+              sx={{ 
+                backgroundColor: 'rgb(242, 242, 242)',
+                '.MuiOutlinedInput-notchedOutline': { 
+                  border: 'none' 
+                }
+              }}>
+            </TextField>
+            <Button
+              type='submit'
+              variant='contained'
+              sx={{ maxWidth: '180px', backgroundColor: '#222' }}>
+                Submit comment
+            </Button>
+          </Stack>
+        </form>
       </>
     )
   }
