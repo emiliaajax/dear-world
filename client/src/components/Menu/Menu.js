@@ -13,13 +13,6 @@ class Menu extends React.Component {
                 DEAR WORLD
               </Typography>
               <List component="nav" aria-label="main mailbox folders">
-                {/* <ListItemButton
-                  component='a'
-                  href='/'>          
-                  <ListItemIcon>
-                    <HomeIcon />
-                  </ListItemIcon>
-                </ListItemButton> */}
                 <ListItemButton
                   component='a'
                   href='/create'>          
