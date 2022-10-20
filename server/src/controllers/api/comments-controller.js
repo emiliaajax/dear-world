@@ -12,4 +12,25 @@ export class CommentsController {
       next(error)
     }
   }
+
+  async createComment (req, res, next) {
+    try {
+      const comment = new Comment(req.body)
+      
+      await comment.save()
+
+      const location = new URL(
+        `${req.protocol}://${req.get('host')}${req.baseUrl}/${comment._id}`
+      )
+
+      res
+        .location(location.href)
+        .status(201)
+        .json({
+          id: comment.id
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
