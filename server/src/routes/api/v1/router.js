@@ -4,5 +4,6 @@ import { router as commentsRouter } from './comments-routes.js'
 
 export const router = express.Router()
 
-router.use('/', postsRouter)
 router.use('/comments', commentsRouter)
+router.use('/', postsRouter)
+
