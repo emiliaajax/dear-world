@@ -1,10 +1,11 @@
 import { Button, Stack, TextField } from '@mui/material';
 import React from 'react'
+import CommentsService from '../../features/posts/CommentsService';
 
 // https://stackoverflow.com/questions/65161428/how-to-remove-border-in-textfield-fieldset-in-material-ui
 class CommentForm extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       name: '',
       comment: ''
@@ -18,9 +19,17 @@ class CommentForm extends React.Component {
     }))
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault()
-    // To be implemented
+
+    const commentData = {
+      postId: this.props.postId,
+      name: this.state.name,
+      comment: this.state.comment
+    }
+
+    await new CommentsService().createPost(commentData)
+    this.setState({ name: '', comment: ''})
   }
 
   render() { 
