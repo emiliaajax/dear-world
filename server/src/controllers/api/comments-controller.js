@@ -3,11 +3,21 @@ import { Comment } from '../../models/comment.js'
 export class CommentsController {
   async findPostComments (req, res, next) {
     try {
-      const comments = await Comment.find({ postId: req.body.postId })
-
       res
         .status(200)
-        .json(comments)
+        .json(req.comments)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async loadComments (req, res, next, id) {
+    try {
+      const comments = await Comment.find({ postId: id })
+
+      req.comments = comments
+
+      next()
     } catch (error) {
       next(error)
     }
