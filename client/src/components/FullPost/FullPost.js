@@ -1,15 +1,27 @@
 import { Divider, Paper, Typography } from '@mui/material'
+import { Stack } from '@mui/system'
 import React from 'react'
+import CommentsService from '../../features/posts/CommentsService.js'
 import PostsService from '../../features/posts/PostsService.js'
+import Comment from '../Comment/Comment.js'
 import CommentForm from '../CommentForm/CommentForm.js'
 
 class FullPost extends React.Component {
   constructor () {
     super()
 
+    this.postId = this.getIdFromUrl()
     this.state = {
-      post: {}
+      post: {},
+      comments: []
     }
+  }
+
+  async componentDidMount() {
+    this.setState({ 
+      post: await this.getPostById(),
+      comments: await this.getAllPostComments()
+    })
   }
 
   getIdFromUrl () {
@@ -17,11 +29,22 @@ class FullPost extends React.Component {
   }
 
   async getPostById() {
-    return await new PostsService().getPostById(this.getIdFromUrl())
+    return await new PostsService().getPostById(this.postId)
   }
 
-  async componentDidMount() {
-    this.setState({ post: await this.getPostById() })
+  async getAllPostComments() {
+    return await new CommentsService().getAllPostComments(this.postId)
+  }
+
+  renderAllPostComments() {
+    console.log(this.state.comments)
+    return this.state.comments?.map((comment) => {
+      return (
+        <Stack>
+          <Comment comment={comment}></Comment>
+        </Stack>
+      )
+    })
   }
 
   render() {
@@ -36,7 +59,10 @@ class FullPost extends React.Component {
         </Typography>
         <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5 }}/>
         <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '50px'}}>COMMENTS</Typography>
-        <CommentForm></CommentForm>
+        <Stack>
+          {this.renderAllPostComments()}
+        </Stack>
+        <CommentForm postId={this.postId}></CommentForm>
        </Paper>
       </>
     )

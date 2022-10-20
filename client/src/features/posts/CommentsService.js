@@ -1,10 +1,8 @@
 
 export default class CommentsService {
   async getAllPostComments(id) {
-    const allPostComments = await fetch(process.env.REACT_APP_POSTS_API + 'comments', {
-      method: 'GET',
-      body: JSON.stringify(id)
-    })
+    const allPostComments = await fetch(process.env.REACT_APP_POSTS_API + `comments/${id}`)
+    
     return await allPostComments.json()
   }
 
