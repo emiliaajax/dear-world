@@ -1,5 +1,5 @@
 
-export class PostsService {
+export default class PostsService {
   async getAllPosts() {
     const allPosts = await fetch(process.env.REACT_APP_POSTS_API)
     return await allPosts.json()
@@ -22,6 +22,4 @@ export class PostsService {
     return post.json()
   }
 }
- 
-export default PostsService
 
