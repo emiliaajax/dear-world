@@ -14,10 +14,16 @@ class PostForm extends React.Component {
       title: '',
       text: ''
     }
+
   }
 
   onSubmit = async (event) => {
     event.preventDefault()
+
+    if (this.state.author.trim() === '') {
+      this.state.author = 'Anonymous'
+    }
+
     this.state.text = emojiProvider.replaceEmoticonsWithEmojis(this.state.text)
     const postsService = new PostsService()
     const response = await postsService.createPost(this.state)
@@ -28,7 +34,7 @@ class PostForm extends React.Component {
       title: '',
       text: ''
     })
-    }
+  }
 
   onChange = (event) => {
     this.setState((previousState) => ({
@@ -48,7 +54,7 @@ class PostForm extends React.Component {
                 <Grid item xs={6}>
                   <TextField
                     fullWidth
-                    label='Författare' 
+                    label='Author' 
                     size='small' 
                     name='author' 
                     value={this.state.author} 
@@ -58,7 +64,7 @@ class PostForm extends React.Component {
                   <Grid item xs={6}>
                   <TextField 
                     fullWidth
-                    label='Ämne' 
+                    label='Subject' 
                     size='small' 
                     name='subject' 
                     value={this.state.subject} 
@@ -67,7 +73,7 @@ class PostForm extends React.Component {
                   </Grid>
                   </Grid>
                 <TextField 
-                  label='Rubrik' 
+                  label='Title' 
                   size='small' 
                   name='title' 
                   value={this.state.title} 
@@ -87,7 +93,7 @@ class PostForm extends React.Component {
                 type='submit'
                 variant='contained'
                 sx={{ backgroundColor: '#222' }}>
-                  Publicera
+                  Publish
               </Button>
             </Grid>
           </Grid>

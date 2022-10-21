@@ -11,6 +11,7 @@ class FullPost extends React.Component {
     super()
 
     this.postId = this.getIdFromUrl()
+    
     this.state = {
       post: {},
       comments: []
@@ -20,7 +21,7 @@ class FullPost extends React.Component {
   async componentDidMount() {
     this.setState({ 
       post: await this.getPostById(),
-      comments: await this.getAllPostComments()
+      comments: await this.getAllPostComments(),
     })
   }
 
@@ -40,14 +41,13 @@ class FullPost extends React.Component {
     console.log(this.state.comments)
     return this.state.comments?.map((comment) => {
       return (
-        <Stack>
-          <Comment comment={comment}></Comment>
-        </Stack>
+        <Comment comment={comment}></Comment>
       )
     })
   }
 
   render() {
+    console.log(this.state.numberOfComments)
     return (
       <>
        <Paper sx={{ padding: '10px', maxWidth: '800px', margin: '0 auto', boxShadow: 'none' }}>
@@ -58,11 +58,13 @@ class FullPost extends React.Component {
           {this.state.post.text}
         </Typography>
         <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5 }}/>
-        <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '50px'}}>COMMENTS</Typography>
-        <Stack>
+        <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '50px'}}>{this.state.comments.length} COMMENTS</Typography>
+        <Stack spacing={10}>
+        <Stack spacing={3}>
           {this.renderAllPostComments()}
         </Stack>
         <CommentForm postId={this.postId}></CommentForm>
+        </Stack>
        </Paper>
       </>
     )

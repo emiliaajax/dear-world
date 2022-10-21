@@ -7,9 +7,9 @@ class Menu extends React.Component {
     return (
       <>
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static" sx={{ backgroundColor: '#FAFAFA', boxShadow: '0px 0px 5px #D4D4D4' }}>
+          <AppBar position="static" sx={{ backgroundColor: 'rgb(0, 100, 112)', boxShadow: '0px 0px 5px #D4D4D4' }}>
             <Toolbar>
-              <Typography component='a' href='/' variant='h6' sx={{ flexGrow: 1, color: '#949494', textDecoration: 'none' }}>
+              <Typography component='a' href='/' variant='h6' sx={{ flexGrow: 1, color: '#FFFFFF', textDecoration: 'none' }}>
                 DEAR WORLD
               </Typography>
               <List component="nav" aria-label="main mailbox folders">
@@ -17,7 +17,7 @@ class Menu extends React.Component {
                   component='a'
                   href='/create'>          
                   <ListItemIcon>
-                    <AddIcon />
+                    <AddIcon sx={{ color: '#FFFFFF' }} />
                   </ListItemIcon>
                 </ListItemButton>
               </List>

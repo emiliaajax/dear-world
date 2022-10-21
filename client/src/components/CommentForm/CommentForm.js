@@ -1,8 +1,8 @@
-import { Button, Stack, TextField } from '@mui/material';
+import { Button, Stack, TextField } from '@mui/material'
 import React from 'react'
-import CommentsService from '../../features/posts/CommentsService';
+import CommentsService from '../../features/posts/CommentsService'
+import { emojiProvider } from 'emoji-provider'
 
-// https://stackoverflow.com/questions/65161428/how-to-remove-border-in-textfield-fieldset-in-material-ui
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
     const commentData = {
       postId: this.props.postId,
       name: this.state.name,
-      comment: this.state.comment
+      comment: emojiProvider.replaceEmoticonsWithEmojis(this.state.comment)
     }
 
     await new CommentsService().createPost(commentData)

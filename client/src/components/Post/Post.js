@@ -1,5 +1,6 @@
 import { Card, CardActionArea, CardContent, CardHeader, Typography } from '@mui/material'
 import React from 'react'
+import dateFormat from 'dateformat'
 
 class Post extends React.Component {
   constructor (props) {
@@ -8,21 +9,23 @@ class Post extends React.Component {
     this.id = props.post._id
     this.title = props.post.title
     this.author = props.post.author
-    this.date = props.post.date
-    this.text = props.post.text.slice(0, 520) + ' ...'
+    this.subject = props.post.subject
+    this.date = dateFormat(new Date(props.post.createdAt), 'mmmm d, yyyy')
+    this.text = props.post.text.slice(0, 450) + '...'
 
+    this.subHeaderText = `${this.author} in ${this.subject} · ${this.date}`
   }
 
   render() { 
     return (
       <> 
-        <Card variant='outlined' sx={{ border: '1px solid #e7e7e7' }}>
+        <Card variant='filled'>
           <CardActionArea href={this.id}>
-            <CardHeader
+            <CardHeader sx={{ '.MuiCardHeader-title': { fontWeight: 'bold' }, '.MuiCardHeader-subheader': { fontSize: '0.9rem' }}}
               title={this.title}
-              subheader={this.date}>
+              subheader={this.subHeaderText}>
             </CardHeader>
-            <CardContent>
+            <CardContent sx={{ paddingTop: '0px' }}>
               <Typography>
                 {this.text}
               </Typography>
