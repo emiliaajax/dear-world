@@ -38,7 +38,6 @@ class FullPost extends React.Component {
   }
 
   renderAllPostComments() {
-    console.log(this.state.comments)
     return this.state.comments?.map((comment) => {
       return (
         <Comment comment={comment}></Comment>
@@ -47,7 +46,6 @@ class FullPost extends React.Component {
   }
 
   render() {
-    console.log(this.state.numberOfComments)
     return (
       <>
        <Paper sx={{ padding: '10px', maxWidth: '800px', margin: '0 auto', boxShadow: 'none' }}>
@@ -57,13 +55,13 @@ class FullPost extends React.Component {
         <Typography sx={{ paddingTop: '30px' }}>
           {this.state.post.text}
         </Typography>
-        <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5 }}/>
-        <Typography variant='h4' sx={{ paddingTop: '50px', paddingBottom: '50px'}}>{this.state.comments.length} COMMENTS</Typography>
-        <Stack spacing={10}>
+        <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5, color: 'rgb(0, 100, 112)' }}/>
+        <Typography variant='h4' sx={{ paddingTop: '50px' }}>{this.state.comments.length} COMMENTS</Typography>
         <Stack spacing={3}>
           {this.renderAllPostComments()}
         </Stack>
-        <CommentForm postId={this.postId}></CommentForm>
+        <Stack sx={{ marginTop: '50px' }}>
+          <CommentForm postId={this.postId}></CommentForm>
         </Stack>
        </Paper>
       </>

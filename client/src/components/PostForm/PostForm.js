@@ -14,7 +14,6 @@ class PostForm extends React.Component {
       title: '',
       text: ''
     }
-
   }
 
   onSubmit = async (event) => {
@@ -28,12 +27,8 @@ class PostForm extends React.Component {
     const postsService = new PostsService()
     const response = await postsService.createPost(this.state)
     this.id = await response.id
-    this.setState({ 
-      author: '',
-      subject: '',
-      title: '',
-      text: ''
-    })
+
+    window.location.href = `/${await this.id}`
   }
 
   onChange = (event) => {
@@ -50,27 +45,27 @@ class PostForm extends React.Component {
           <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto'}}>
             <Grid item xs={10}>
               <Stack spacing={2}>
-              <Grid container spacing={1}>
-                <Grid item xs={6}>
-                  <TextField
-                    fullWidth
-                    label='Author' 
-                    size='small' 
-                    name='author' 
-                    value={this.state.author} 
-                    onChange={this.onChange}>
-                  </TextField>
-                  </Grid>
+                <Grid container spacing={1}>
                   <Grid item xs={6}>
-                  <TextField 
-                    fullWidth
-                    label='Subject' 
-                    size='small' 
-                    name='subject' 
-                    value={this.state.subject} 
-                    onChange={this.onChange}>
-                  </TextField>
-                  </Grid>
+                    <TextField
+                      fullWidth
+                      label='Author' 
+                      size='small' 
+                      name='author' 
+                      value={this.state.author} 
+                      onChange={this.onChange}>
+                    </TextField>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField 
+                        fullWidth
+                        label='Subject' 
+                        size='small' 
+                        name='subject' 
+                        value={this.state.subject} 
+                        onChange={this.onChange}>
+                      </TextField>
+                    </Grid>
                   </Grid>
                 <TextField 
                   label='Title' 

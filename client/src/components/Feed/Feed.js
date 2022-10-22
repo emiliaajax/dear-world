@@ -21,7 +21,7 @@ class Feed extends React.Component {
   }
 
   renderAllPosts() {
-    return this.state.posts?.map((post) => {
+    return this.state.posts?.reverse().map((post) => {
       return (
         <Grid key={post._id} item xs={4}>
           <Post post={post}></Post>

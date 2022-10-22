@@ -6,7 +6,7 @@ class Comment extends React.Component {
   render() {
     return (
       <>
-        <Card variant='filled'>
+        <Card variant='filled' sx={{ marginTop: '50px', marginBottom: '50px'}} >
           <CardHeader 
             sx={{ paddingLeft: 0, '.MuiCardHeader-title': { fontSize: '1.2rem', color: 'rgb(0, 100, 112)', fontWeight: 'bold' }, '.MuiCardHeader-subheader': { fontSize: '0.9rem', fontStyle: 'italic' } }}
             title={this.props.comment.name}
