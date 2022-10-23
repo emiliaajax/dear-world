@@ -5,8 +5,13 @@ export default class PostsService {
     return await allPosts.json()
   }
 
+  async getPostsBySubject(subject) {
+    const posts = await fetch(process.env.REACT_APP_POSTS_API + subject)
+    return await posts.json()
+  }
+
   async getPostById (id) {
-    const post = await fetch(process.env.REACT_APP_POSTS_API + `${id}`)
+    const post = await fetch(process.env.REACT_APP_POSTS_API + 'post/' + id)
     return await post.json()
   }
 

@@ -2,8 +2,9 @@ import { Grid } from '@mui/material'
 import { Stack } from '@mui/system'
 import React from 'react'
 import Menu from '../Menu/Menu.js'
+import SideMenu from '../SideMenu/SideMenu.js'
 
-class BaseLayout extends React.Component {
+class SecondaryLayout extends React.Component {
   constructor (props) {
     super(props)
     this.children = props.children ? props.children : null
@@ -14,6 +15,7 @@ class BaseLayout extends React.Component {
       <>
         <Stack>
           <Menu></Menu>
+          <SideMenu></SideMenu>
         </Stack>
         <Grid 
           container
@@ -28,4 +30,4 @@ class BaseLayout extends React.Component {
   }
 }
  
-export default BaseLayout;
+export default SecondaryLayout

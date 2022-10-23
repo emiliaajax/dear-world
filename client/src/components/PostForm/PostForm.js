@@ -28,7 +28,7 @@ class PostForm extends React.Component {
     const response = await postsService.createPost(this.state)
     this.id = await response.id
 
-    window.location.href = `/${await this.id}`
+    window.location.href = `/post/${await this.id}`
   }
 
   onChange = (event) => {

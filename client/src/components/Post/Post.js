@@ -6,7 +6,7 @@ class Post extends React.Component {
   constructor (props) {
     super()
     this.props = props
-    this.id = props.post._id
+    this.id = `post/${props.post._id}`
     this.title = props.post.title
     this.author = props.post.author
     this.subject = props.post.subject

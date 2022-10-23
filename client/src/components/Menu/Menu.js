@@ -12,7 +12,7 @@ class Menu extends React.Component {
               <Typography component='a' href='/' variant='h6' sx={{ flexGrow: 1, color: 'rgb(0, 100, 112)', fontWeight: 'bold', textDecoration: 'none' }}>
                 DEAR WORLD
               </Typography>
-              <List component="nav" aria-label="main mailbox folders">
+              <List component='nav'>
                 <ListItemButton
                   component='a'
                   href='/create'>          

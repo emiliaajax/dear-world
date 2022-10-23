@@ -17,7 +17,14 @@ class Feed extends React.Component {
   }
 
   async getAllPosts() {
-    return await new PostsService().getAllPosts()
+    let posts = []
+    if (window.location.pathname === '/') {
+      posts = await new PostsService().getAllPosts()
+    } else {
+      const subject = window.location.pathname.replace('/', '')
+      posts = await new PostsService().getPostsBySubject(subject)
+    }
+    return posts
   }
 
   renderAllPosts() {

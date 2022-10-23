@@ -23,8 +23,13 @@ class App extends React.Component {
             />
             <Route
               exact
-              path='/:id'
+              path='/post/:id'
               element={<BaseLayout><FullPost></FullPost></BaseLayout>}
+            />
+            <Route
+              exact
+              path='/:subject'
+              element={<BaseLayout><Home></Home></BaseLayout>}
             />
             <Route
               path="*"
