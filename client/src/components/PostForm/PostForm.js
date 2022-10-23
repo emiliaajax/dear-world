@@ -1,9 +1,9 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
-import { Button, Grid } from "@mui/material"
-import Stack from '@mui/material/Stack'
+import { Button, FormControl, Grid, MenuItem, Select, Stack } from "@mui/material"
 import PostsService from '../../features/posts/PostsService'
 import { emojiProvider } from 'emoji-provider'
+import { Subjects } from '../../enum/subjects.js'
 
 class PostForm extends React.Component {
   constructor (props) {
@@ -38,11 +38,25 @@ class PostForm extends React.Component {
     }))
   }
 
+  onSubjectChange = (event) => {
+    this.setState({ subject: event.target.value })
+  }
+
+  renderMenuItems() {
+    return Object.values(Subjects).map((subject) => {
+      return (
+        <MenuItem value={subject}>
+          {subject}
+        </MenuItem>
+      )
+    })
+  }
+
   render() {
     return (
       <>
         <form onSubmit={(event) => this.onSubmit(event)}>
-          <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto'}}>
+          <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto' }}>
             <Grid item xs={10}>
               <Stack spacing={2}>
                 <Grid container spacing={1}>
@@ -57,14 +71,17 @@ class PostForm extends React.Component {
                     </TextField>
                     </Grid>
                     <Grid item xs={6}>
-                      <TextField 
-                        fullWidth
-                        label='Subject' 
-                        size='small' 
-                        name='subject' 
-                        value={this.state.subject} 
-                        onChange={this.onChange}>
-                      </TextField>
+                      <FormControl fullWidth>
+                        <Select
+                          size='small' 
+                          labelId='subjectLabel'
+                          id='subject'
+                          value={this.state.subject}
+                          onChange={this.onSubjectChange}
+                        >
+                          {this.renderMenuItems()}
+                        </Select>
+                      </FormControl>
                     </Grid>
                   </Grid>
                 <TextField 
@@ -97,5 +114,5 @@ class PostForm extends React.Component {
     )
   }
 }
- 
+
 export default PostForm
