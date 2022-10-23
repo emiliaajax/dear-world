@@ -5,16 +5,20 @@ export const router = express.Router()
 
 const controller = new PostsController()
 
-router.param('id', (req, res, next, id) => controller.loadPost(req, res, next, id))
+// router.param('id', (req, res, next, id) => controller.loadPost(req, res, next, id))
 
 router.get('/',
   (req, res, next) => controller.findAllPosts(req, res, next)
 )
 
-router.post('/', 
+router.post('/',
   (req, res, next) => controller.createPost(req, res, next)
 )
 
-router.get('/:id',
+router.get('/post/:id',
   (req, res, next) => controller.findPost(req, res, next)
+)
+
+router.get('/:subject',
+  (req, res, next) => controller.findPostsBySubject(req, res, next)
 )

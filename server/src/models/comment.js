@@ -13,7 +13,7 @@ const schema = new mongoose.Schema({
   comment: {
     type: String,
     maxlength: [2000, 'Författarnamn måste vara mindre än 2000 tecken']
-  },
+  }
 }, {
   timestamps: true,
   toJSON: {

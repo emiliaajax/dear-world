@@ -6,4 +6,3 @@ export const router = express.Router()
 
 router.use('/comments', commentsRouter)
 router.use('/', postsRouter)
-

@@ -1,23 +1,6 @@
 import { Post } from '../../models/post.js'
-import createError from 'http-errors'
 
 export class PostsController {
-  async loadPost (req, res, next, id) {
-    try {
-      const post = await Post.findById(id)
-
-      if (!post) {
-        return next(createError(404))
-      }
-
-      req.post = post
-
-      next()
-    } catch (error) {
-      next(error)
-    }
-  }
-
   /**
    * Sends a JSON response containing all posts.
    *
@@ -37,6 +20,20 @@ export class PostsController {
     }
   }
 
+  async findPostsBySubject (req, res, next) {
+    try {
+      const posts = await Post.find({ subject: req.params.subject })
+
+      req.posts = posts
+
+      res
+        .status(200)
+        .json(posts)
+    } catch (error) {
+      next(error)
+    }
+  }
+
   /**
    * Sends a JSON response containing one post.
    *
@@ -45,9 +42,11 @@ export class PostsController {
    * @param {Function} next Express next middleware function.
    */
   async findPost (req, res, next) {
+    const post = await Post.findById(req.params.id)
+
     res
       .status(200)
-      .json(req.post)
+      .json(post)
   }
 
   /**

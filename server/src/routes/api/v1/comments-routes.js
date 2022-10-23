@@ -7,7 +7,7 @@ const controller = new CommentsController()
 
 router.param('id', (req, res, next, id) => controller.loadComments(req, res, next, id))
 
-router.post('/', 
+router.post('/',
   (req, res, next) => controller.createComment(req, res, next)
 )
 
