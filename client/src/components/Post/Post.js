@@ -6,7 +6,7 @@ class Post extends React.Component {
   constructor (props) {
     super()
     this.props = props
-    this.id = `post/${props.post._id}`
+    this.id = `/post/${props.post._id}`
     this.title = props.post.title
     this.author = props.post.author
     this.subject = props.post.subject
@@ -20,8 +20,8 @@ class Post extends React.Component {
     return (
       <> 
         <Card variant='filled'>
-          <CardActionArea href={this.id}>
-            <CardHeader sx={{ '.MuiCardHeader-title': { fontWeight: 'bold' }, '.MuiCardHeader-subheader': { fontSize: '0.9rem' }}}
+          <CardActionArea href={this.id} sx={{ '.MuiCardActionArea-focusHighlight': { color: '#FFFFFF' }}}>
+            <CardHeader sx={{ '.MuiCardHeader-title': { fontWeight: 'bold' }, '.MuiCardHeader-subheader': { fontSize: '0.9rem', marginTop: '2px' }}}
               title={this.title}
               subheader={this.subHeaderText}>
             </CardHeader>

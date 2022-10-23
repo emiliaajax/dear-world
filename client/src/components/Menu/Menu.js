@@ -1,29 +1,46 @@
-import { AppBar, Box, List, ListItemButton, ListItemIcon, Toolbar, Typography } from '@mui/material'
+import { AppBar, Toolbar, Container, MenuItem, Stack, ListItemIcon } from '@mui/material'
 import React from 'react'
+import { Subjects } from '../../enum/subjects.js'
 import AddIcon from '@mui/icons-material/Add'
 
 class Menu extends React.Component {
+  renderMenuItems() {
+    return Object.values(Subjects).map((subject) => {
+      const location = `/${subject}`
+      return (
+        <MenuItem
+          component='a'
+          href={location}>
+          {subject}
+        </MenuItem>
+      )
+    })
+  }
+
   render() { 
     return (
       <>
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static" sx={{ backgroundColor: '#FAFAFA', boxShadow: '0px 0px 5px #D4D4D4' }}>
-            <Toolbar>
-              <Typography component='a' href='/' variant='h6' sx={{ flexGrow: 1, color: 'rgb(0, 100, 112)', fontWeight: 'bold', textDecoration: 'none' }}>
-                DEAR WORLD
-              </Typography>
-              <List component='nav'>
-                <ListItemButton
+      <AppBar position="static" sx={{ backgroundColor: '#FAFAFA', color: '#222', boxShadow: 'none' }}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Stack direction='row' spacing={2} sx={{ margin: '0 auto' }}>
+              <MenuItem 
+                component='a'
+                href='/'>
+                All
+              </MenuItem>
+              {this.renderMenuItems()}
+              <MenuItem
                   component='a'
                   href='/create'>          
                   <ListItemIcon>
-                    <AddIcon sx={{ color: 'rgb(0, 100, 112)'}} />
+                    <AddIcon sx={{ color: 'rgb(0, 100, 112)' }} fontSize='large'/>
                   </ListItemIcon>
-                </ListItemButton>
-              </List>
-            </Toolbar>
-          </AppBar>
-        </Box>
+              </MenuItem>
+            </Stack>
+          </Toolbar>
+        </Container>
+      </AppBar>
       </>
     )
   }
