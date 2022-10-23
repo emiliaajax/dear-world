@@ -42,4 +42,3 @@ schema.virtual('id').get(function () {
 
 // Creates a model using the schema.
 export const Post = mongoose.model('Post', schema)
-
