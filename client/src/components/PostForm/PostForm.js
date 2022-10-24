@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
 import { Button, FormControl, Grid, MenuItem, Select, Stack } from "@mui/material"
-import PostsService from '../../features/posts/PostsService'
+import PostsService from '../../services/PostsService'
 import { emojiProvider } from 'emoji-provider'
 import { Subjects } from '../../enum/subjects.js'
 

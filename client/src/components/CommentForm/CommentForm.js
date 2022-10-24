@@ -1,6 +1,6 @@
 import { Button, Stack, TextField } from '@mui/material'
 import React from 'react'
-import CommentsService from '../../features/posts/CommentsService'
+import CommentsService from '../../services/CommentsService'
 import { emojiProvider } from 'emoji-provider'
 
 class CommentForm extends React.Component {

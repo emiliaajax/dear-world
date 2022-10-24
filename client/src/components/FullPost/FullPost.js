@@ -1,7 +1,7 @@
 import { Divider, Paper, Typography, Stack } from '@mui/material'
 import React from 'react'
-import CommentsService from '../../features/posts/CommentsService.js'
-import PostsService from '../../features/posts/PostsService.js'
+import CommentsService from '../../services/CommentsService.js'
+import PostsService from '../../services/PostsService.js'
 import Comment from '../Comment/Comment.js'
 import CommentForm from '../CommentForm/CommentForm.js'
 

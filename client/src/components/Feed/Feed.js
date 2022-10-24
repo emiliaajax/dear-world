@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 import Post from '../Post/Post.js'
-import PostsService from '../../features/posts/PostsService.js'
+import PostsService from '../../services/PostsService.js'
 
 class Feed extends React.Component {
   constructor () {
