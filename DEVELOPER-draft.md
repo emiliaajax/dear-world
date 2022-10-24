@@ -9,6 +9,9 @@ Suggestions for future implementation:
 - Adding the possibility for users to report posts not following the guidelines.
 - Automatic scanning of newly created posts using AI.
 
+System Design
+![System Design](images/system-design.png "System Design")
+
 # Requirements
 
 Requirements specification can be found here: requirements.md
