@@ -10,7 +10,7 @@ Suggestions for future implementation:
 - Automatic scanning of newly created posts using AI.
 
 System Design
-![System Design](images/system-design.png "System Design")
+![System Design](images/system-design.png)
 
 # Requirements
 
