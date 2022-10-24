@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Container, MenuItem, Stack, ListItemIcon } from '@mui/material'
 import React from 'react'
 import { Subjects } from '../../enum/subjects.js'
-import AddIcon from '@mui/icons-material/Add'
+import AddIcon from '@mui/icons-material/Add.js'
 
 class Menu extends React.Component {
   renderMenuItems() {
