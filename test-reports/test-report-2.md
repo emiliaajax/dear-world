@@ -7,6 +7,7 @@
 ### Version
 
 Server: 1.0.0
+<br />
 Client: 1.0.0
 
 ### Test environment
@@ -41,13 +42,13 @@ The application was tested in developement environment.
 
 ### Improvement points
 
-2.5, 2.9 - For some reason, the subject field is marked red which is not expected as a category has been selected.
+**TC2.5, TC2.9** - For some reason, the subject field is marked red which is not expected as a category has been selected.
 
-2.6, 2.8 - All fields are marked red even though only title field are supposed to be red marked.
+**TC2.6, TC2.8** - All fields are marked red even though only title field are supposed to be red marked.
 
-2.7 - Text field is marked red even though it's filled out with a text with more than 500 characters.
+**TC2.7** - Text field is marked red even though it's filled out with a text with more than 500 characters.
 
-4.4, 4.5, 4.6, 4.7 - The issue with having to reload the page, after submitting a comment, still remains. Everything else works as expected and the issue with name being shown as empty and not 'Anonymous' when not filling the name field out has been fixed.
+**TC4.4, TC4.5, TC4.6, TC4.7** - The issue with having to reload the page, after submitting a comment, still remains. Everything else works as expected and the issue with name being shown as empty and not 'Anonymous' when not filling the name field out has been fixed.
 
 ### Analysis
 The error handling is only working for the create post form when all the fields are empty or when only the author field is filled out. <br /><br /> The issue with having to reload the page, after submitting a comment, still remains.
