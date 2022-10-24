@@ -8,7 +8,8 @@ class CommentForm extends React.Component {
     super(props)
     this.state = {
       name: '',
-      comment: ''
+      comment: '',
+      commentEmpty: false,
     }
   }
   
@@ -17,19 +18,31 @@ class CommentForm extends React.Component {
       ...previousState,
       [event.target.name]: event.target.value
     }))
+
+    if (event.target.name === 'comment') {
+      this.setState({ commentEmpty: false })
+    } 
   }
 
   onSubmit = async (event) => {
     event.preventDefault()
 
+    if (this.invalidComment()) {
+      this.setState({ commentEmpty: true })
+    }
+
     const commentData = {
       postId: this.props.postId,
-      name: this.state.name,
+      name: this.state.name.trim() ? this.state.name : 'Anonymous',
       comment: emojiProvider.replaceEmoticonsWithEmojis(this.state.comment)
     }
 
     await new CommentsService().createPost(commentData)
     this.setState({ name: '', comment: ''})
+  }
+
+  invalidComment() {
+    return this.state.comment.length === 0
   }
 
   render() { 
@@ -55,6 +68,8 @@ class CommentForm extends React.Component {
               name='comment'
               value={this.state.comment}
               onChange={this.onChange}
+              error={this.state.commentEmpty ? true : false}
+              helperText={this.state.commentEmpty ? 'Your comment is empty' : ''}
               placeholder='Comment'
               multiline
               rows={10} 
