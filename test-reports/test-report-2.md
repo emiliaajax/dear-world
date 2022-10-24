@@ -47,5 +47,7 @@ The application was tested in developement environment.
 
 2.7 - Text field is marked red even though it's filled out with a text with more than 500 characters.
 
+4.4, 4.5, 4.6, 4.7 - The issue with having to reload the page, after submitting a comment, still remains. Everything else works as expected and the issue with name being shown as empty and not 'Anonymous' when not filling the name field out has been fixed.
+
 ### Analysis
-To create a new post works perfectly when all of the fields are filled out (as well as when the author field is left empty or with spaces only), but the application does not work as expected in cases where fields, that are not supposed to be left empty, are left empty anyway. This goes for creating comments as well. Error handling in the UI should be implemented.<br /><br /> The issue with having to reload the page, after submitting a comment, to get the comment to show up requires some form of state handler. 
+The error handling is only working for the create post form when all the fields are empty or when only the author field is filled out. <br /><br /> The issue with having to reload the page, after submitting a comment, still remains.
