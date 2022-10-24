@@ -12,11 +12,11 @@ The testing is done with manual test cases of the requirements that are implemen
 | TC2.2 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.3 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.4 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
-| TC2.5 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.6 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.7 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.8 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.9 | 0 | 1/:x: | 0 | 0 | 0 |
+| TC2.5 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.6 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.7 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.8 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.9 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.10 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.11 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.12 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
@@ -30,7 +30,7 @@ The testing is done with manual test cases of the requirements that are implemen
 | TC4.6 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC4.7 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC5.1 | 0 | 0 | 0 | 0 | 1/:white_check_mark: |
-| COVERAGE & SUCCESS | 1/:white_check_mark: | 8/:white_check_mark: 5/:x: | 1/:white_check_mark: | 3/:white_check_mark: 4/:x: | 1/:white_check_mark: |
+| COVERAGE & SUCCESS | 1/:white_check_mark: | 13/:white_check_mark: | 1/:white_check_mark: | 3/:white_check_mark: 4/:x: | 1/:white_check_mark: |
 
 ## Test cases
 
