@@ -64,13 +64,13 @@ class PostForm extends React.Component {
   }
 
   displaySubjectError() {
-    if (this.invalidSubject) {
+    if (this.invalidSubject()) {
       this.setState({ subjectEmpty: true })
     }
   }
 
   displayTextError() {
-    if (this.invalidTextLength) {
+    if (this.invalidTextLength()) {
       this.setState({ textTooShort: true })
     }
   }
