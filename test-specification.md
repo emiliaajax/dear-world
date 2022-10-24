@@ -9,9 +9,9 @@ The testing is done with manual test cases of the requirements that are implemen
 |------|-----|-----|-----|-----|------|
 | TC1.1 | 1/:white_check_mark: | 0 | 0 | 0 | 0 |
 | TC2.1 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
-| TC2.2 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.3 | 0 | 1/:x: | 0 | 0 | 0 |
-| TC2.4 | 0 | 1/:x: | 0 | 0 | 0 |
+| TC2.2 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.3 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
+| TC2.4 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.5 | 0 | 1/:x: | 0 | 0 | 0 |
 | TC2.6 | 0 | 1/:x: | 0 | 0 | 0 |
 | TC2.7 | 0 | 1/:x: | 0 | 0 | 0 |
@@ -22,15 +22,15 @@ The testing is done with manual test cases of the requirements that are implemen
 | TC2.12 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC2.13 | 0 | 1/:white_check_mark: | 0 | 0 | 0 |
 | TC3.1 | 0 | 0 | 1/:white_check_mark: | 0 | 0 |
-| TC4.1 | 0 | 0 | 0 | 1/:x: | 0 |
-| TC4.2 | 0 | 0 | 0 | 1/:x: | 0 |
-| TC4.3 | 0 | 0 | 0 | 1/:x: | 0 |
+| TC4.1 | 0 | 0 | 0 | 1/:white_check_mark: | 0 |
+| TC4.2 | 0 | 0 | 0 | 1/:white_check_mark: | 0 |
+| TC4.3 | 0 | 0 | 0 | 1/:white_check_mark: | 0 |
 | TC4.4 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC4.5 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC4.6 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC4.7 | 0 | 0 | 0 | 1/:x: | 0 |
 | TC5.1 | 0 | 0 | 0 | 0 | 1/:white_check_mark: |
-| COVERAGE & SUCCESS | 1/:white_check_mark: | 5/:white_check_mark: 8/:x: | 1/:white_check_mark: | 7/:x: | 1/:white_check_mark: |
+| COVERAGE & SUCCESS | 1/:white_check_mark: | 8/:white_check_mark: 5/:x: | 1/:white_check_mark: | 3/:white_check_mark: 4/:x: | 1/:white_check_mark: |
 
 ## Test cases
 
@@ -57,7 +57,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”.
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Title, subject and text field are marked red.
 
 #### **TC2.3 Unsuccessful publishing with only author field filled out**
 
@@ -66,7 +67,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Title, subject and text field are marked red.
 
 #### **TC2.4 Unsuccessful publishing with author and subject fields filled out**
 
@@ -76,7 +78,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Title and text field are marked red.
 
 #### **TC2.5 Unsuccessful publishing with author, subject and title fields filled out**
 
@@ -87,7 +90,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Text field is marked red.
 
 #### **TC2.6 Unsuccessful publishing with author, subject and text fields filled out**
 
@@ -98,7 +102,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Title field is marked red.
 
 #### **TC2.7 Unsuccessful publishing with author, title and text fields filled out**
 
@@ -109,7 +114,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Subject field is marked red.
 
 #### **TC2.8 Unsuccessful publishing with title field only containing spaces**
 
@@ -121,7 +127,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Title field is marked red.
 
 #### **TC2.9 Unsuccessful publishing with text field containing less than 500 characters**
 
@@ -133,7 +140,8 @@ The testing is done with manual test cases of the requirements that are implemen
 - Click on ”Publish”
 
 ###### **Output**
-- The publish button is disabled.
+- A form for creating a post is shown.
+- Text field is marked red.
 
 #### **TC2.10 Successful publishing of post with all fields filled out**
 
@@ -200,7 +208,7 @@ The author is ”Anonymous”.
 - Click on ”Submit comment”
 
 ###### **Output**
-- The submit comment is disabled.
+- Comment field shows a red error text.
 
 #### TC4.2 **Unsuccessful submitting of comment with only name provided**
 
@@ -210,7 +218,7 @@ The author is ”Anonymous”.
 - Click on ”Submit comment”
 
 ###### **Output**
-- The submit comment is disabled.
+- Comment field shows a red error text.
 
 #### **TC4.3 Unsuccessful submitting of comment with spaces only**
 
@@ -221,7 +229,7 @@ The author is ”Anonymous”.
 - Click on ”Submit comment”
 
 ###### **Output**
-- The submit comment is disabled.
+- Comment field shows a red error text.
 
 #### **TC4.4 Successful submitting of comment with all fields filled out**
 
