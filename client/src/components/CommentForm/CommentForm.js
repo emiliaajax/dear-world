@@ -29,7 +29,7 @@ class CommentForm extends React.Component {
 
     if (this.invalidComment()) {
       this.setState({ commentEmpty: true })
-    }
+    } else {
 
     const commentData = {
       postId: this.props.postId,
@@ -40,9 +40,10 @@ class CommentForm extends React.Component {
     await new CommentsService().createPost(commentData)
     this.setState({ name: '', comment: ''})
   }
+  }
 
   invalidComment() {
-    return this.state.comment.length === 0
+    return this.state.comment.trim().length === 0
   }
 
   render() { 
