@@ -3,11 +3,18 @@ import React from 'react'
 import SideMenu from '../Menu/Menu.js'
 
 class BaseLayout extends React.Component {
+  #children
+
   constructor (props) {
     super(props)
-    this.children = props.children ? props.children : null
+    this.#children = props.children ? props.children : null
   }
 
+  /**
+   * Returns the base layout used in the application.
+   *
+   * @returns {HTMLElement}
+   */
   render() {
     return (
       <>
@@ -17,7 +24,7 @@ class BaseLayout extends React.Component {
           spacing={1} 
           sx={{ paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '50px' }}>
             <Grid item xs={12}>
-              {this.children}
+              {this.#children}
             </Grid>
         </Grid>
       </>
