@@ -9,6 +9,7 @@ class Menu extends React.Component {
       const location = `/${subject}`
       return (
         <MenuItem
+          key={subject}
           component='a'
           href={location}>
           {subject}

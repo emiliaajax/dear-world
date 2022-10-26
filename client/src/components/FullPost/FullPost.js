@@ -39,7 +39,7 @@ class FullPost extends React.Component {
   renderAllPostComments() {
     return this.state.comments?.map((comment) => {
       return (
-        <Comment comment={comment}></Comment>
+        <Comment key={comment._id} comment={comment}></Comment>
       )
     })
   }
