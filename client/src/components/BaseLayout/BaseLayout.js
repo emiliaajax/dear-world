@@ -11,21 +11,21 @@ class BaseLayout extends React.Component {
   }
 
   /**
-   * Returns the base layout used in the application.
-   *
    * @returns {HTMLElement}
    */
   render() {
     return (
       <>
-        <SideMenu></SideMenu>
+        <SideMenu />
         <Grid 
           container
           spacing={1} 
-          sx={{ paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '50px' }}>
-            <Grid item xs={12}>
-              {this.#children}
-            </Grid>
+          sx={{ 
+            padding: '50px'
+          }}>
+          <Grid item xs={12}>
+            {this.#children}
+          </Grid>
         </Grid>
       </>
     )

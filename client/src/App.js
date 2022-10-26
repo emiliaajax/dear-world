@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import React from 'react'
 import BaseLayout from './components/BaseLayout/BaseLayout.js'
 import Home from './components/Home/Home.js'
-import PostForm from './components/PostForm/PostForm.js'
+import CreatePostForm from './components/CreatePostForm/CreatePostForm.js'
 import FullPost from './components/FullPost/FullPost.js'
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
             <Route
               exact
               path='/create'
-              element={<BaseLayout><PostForm></PostForm></BaseLayout>}
+              element={<BaseLayout><CreatePostForm></CreatePostForm></BaseLayout>}
             />
             <Route
               exact

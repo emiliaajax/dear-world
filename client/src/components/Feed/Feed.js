@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import Post from '../Post/Post.js'
+import PostPreview from '../PostPreview/PostPreview.js'
 import PostsService from '../../services/PostsService.js'
 
 class Feed extends React.Component {
@@ -13,25 +13,52 @@ class Feed extends React.Component {
   }
 
   async componentDidMount() {
+    if (this.isHomePage()) {
+      this.updateHomePageFeed()
+    } else {
+      this.updateSubjectPageFeed()
+    }
+  }
+
+  isHomePage() {
+    // Not a good solution, but couldn't find a way to navigate
+    // without using the window object.
+    return window.location.pathname === '/'
+  }
+
+  async updateHomePageFeed () {
     this.setState({ posts: await this.getAllPosts() })
   }
 
   async getAllPosts() {
-    let posts = []
-    if (window.location.pathname === '/') {
-      posts = await new PostsService().getAllPosts()
-    } else {
-      const subject = window.location.pathname.replace('/', '')
-      posts = await new PostsService().getPostsBySubject(subject)
-    }
-    return posts
+    return await new PostsService().getAllPosts()
   }
 
-  renderAllPosts() {
+  async updateSubjectPageFeed () {
+    this.setState({ posts: await this.getPostsBySubject() })
+  }
+
+  async getPostsBySubject() {
+    const subject = this.getSubject()
+    return await new PostsService().getPostsBySubject(subject)
+  }
+
+  getSubject() {
+    // Not a good solution, but couldn't find a way to get params
+    // without using the window object.
+    return window.location.pathname.replace('/', '')
+  }
+
+  /**
+   * Returns all posts as HTML elements.
+   *
+   * @returns {HTMLElement}
+   */
+  renderAllPostPreviews() {
     return this.state.posts?.reverse().map((post) => {
       return (
         <Grid key={post._id} item xs={4}>
-          <Post post={post}></Post>
+          <PostPreview post={post}></PostPreview>
         </Grid>
       )
     })
@@ -41,7 +68,7 @@ class Feed extends React.Component {
     return (
       <>
         <Grid container spacing={5}>
-          {this.renderAllPosts()}
+          {this.renderAllPostPreviews()}
         </Grid>
       </>
     )

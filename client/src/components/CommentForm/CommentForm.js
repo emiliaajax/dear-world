@@ -13,48 +13,100 @@ class CommentForm extends React.Component {
     }
   }
   
-  onChange = (event) => {
+  /**
+   * Updates states whenever the comment form receives input.
+   *
+   * @param {InputEvent} event 
+   */
+  #onChange = (event) => {
+    this.#updateState(event)
+    
+    if (this.#isCommentTheEventTarget(event)) {
+      this.#updateIsCommentEmptyState(false)
+    }
+  }
+
+  /**
+   * @param {InputEvent} event 
+   */
+  #updateState(event) {
     this.setState((previousState) => ({
       ...previousState,
       [event.target.name]: event.target.value
     }))
-
-    if (event.target.name === 'comment') {
-      this.setState({ commentEmpty: false })
-    } 
   }
 
-  onSubmit = async (event) => {
+  /**
+   * @param {InputEvent} event 
+   * @returns {boolean}
+   */
+  #isCommentTheEventTarget(event) {
+    return event.target.name === 'comment'
+  }
+
+  /**
+   * @param {boolean} status 
+   */
+  #updateIsCommentEmptyState (status) {
+    this.setState({ commentEmpty: status })
+  }
+
+  /**
+   * @param {SubmitEvent} event 
+   */
+  #onSubmit = async (event) => {
     event.preventDefault()
 
-    if (this.invalidComment()) {
-      this.setState({ commentEmpty: true })
+    if (this.#isInvalidComment()) {
+      this.#updateIsCommentEmptyState(true)
     } else {
+      await this.#postComment()
+      this.#resetCommentForm()
+    }
+  }
 
-    const commentData = {
+  /**
+   * @returns {boolean}
+   */
+  #isInvalidComment() {
+    return this.state.comment.trim().length === 0
+  }
+
+  async #postComment() {
+    await new CommentsService().createPost(this.#getCommentData())
+  }
+
+  /**
+   * @returns {object}
+   */
+  #getCommentData () {
+    return {
       postId: this.props.postId,
       name: this.state.name.trim() ? this.state.name : 'Anonymous',
       comment: emojiProvider.replaceEmoticonsWithEmojis(this.state.comment)
     }
+  }
 
-    await new CommentsService().createPost(commentData)
+  #resetCommentForm () {
     this.setState({ name: '', comment: ''})
   }
-  }
 
-  invalidComment() {
-    return this.state.comment.trim().length === 0
-  }
-
+  /**
+   * @returns {HTMLElement}
+   */
   render() { 
     return (
       <>
-      <form onSubmit={this.onSubmit}>
-          <Stack spacing={2} sx={{ maxWidth: '600px' }}>
+        <form onSubmit={this.#onSubmit}>
+          <Stack 
+            spacing={2} 
+            sx={{ 
+              maxWidth: '600px' 
+            }}>
             <TextField
               name='name'
               value={this.state.name}
-              onChange={this.onChange}
+              onChange={this.#onChange}
               placeholder='Name'
               size='small' 
               sx={{ 
@@ -68,7 +120,7 @@ class CommentForm extends React.Component {
             <TextField
               name='comment'
               value={this.state.comment}
-              onChange={this.onChange}
+              onChange={this.#onChange}
               error={this.state.commentEmpty ? true : false}
               helperText={this.state.commentEmpty ? 'Your comment is empty' : ''}
               placeholder='Comment'
@@ -84,7 +136,10 @@ class CommentForm extends React.Component {
             <Button
               type='submit'
               variant='contained'
-              sx={{ maxWidth: '180px', backgroundColor: '#222' }}>
+              sx={{ 
+                maxWidth: '180px', 
+                backgroundColor: '#222' 
+              }}>
                 Submit comment
             </Button>
           </Stack>

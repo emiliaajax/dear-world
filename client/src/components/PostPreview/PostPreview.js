@@ -2,7 +2,7 @@ import { Card, CardActionArea, CardContent, CardHeader, Typography } from '@mui/
 import React from 'react'
 import dateFormat from 'dateformat'
 
-class Post extends React.Component {
+class PostPreview extends React.Component {
   constructor (props) {
     super()
     this.props = props
@@ -37,4 +37,4 @@ class Post extends React.Component {
   }
 }
  
-export default Post
+export default PostPreview

@@ -5,7 +5,7 @@ import PostsService from '../../services/PostsService'
 import { emojiProvider } from 'emoji-provider'
 import { Subjects } from '../../enum/subjects.js'
 
-class PostForm extends React.Component {
+class CreatePostForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,7 +22,7 @@ class PostForm extends React.Component {
   onSubmit = async (event) => {
     event.preventDefault()
 
-    if (this.invalidTitle() || this.invalidSubject() || this.invalidTextLength()) {
+    if (this.isInvalidTitle() || this.isInvalidSubject() || this.isInvalidTextLength()) {
       this.displayTitleError()
       this.displaySubjectError()
       this.displayTextError()
@@ -45,32 +45,32 @@ class PostForm extends React.Component {
     }
   }
 
-  invalidTitle() {
+  isInvalidTitle() {
     return this.state.title.trim().length === 0
   }
 
-  invalidSubject() {
+  isInvalidSubject() {
     return this.state.subject.length === 0
   }
 
-  invalidTextLength() {
+  isInvalidTextLength() {
     return this.state.text.length < 500
   }
 
   displayTitleError() {
-    if (this.invalidTitle()) {
+    if (this.isInvalidTitle()) {
       this.setState({ titleEmpty: true })
     }
   }
 
   displaySubjectError() {
-    if (this.invalidSubject()) {
+    if (this.isInvalidSubject()) {
       this.setState({ subjectEmpty: true })
     }
   }
 
   displayTextError() {
-    if (this.invalidTextLength()) {
+    if (this.isInvalidTextLength()) {
       this.setState({ textTooShort: true })
     }
   }
@@ -188,4 +188,4 @@ class PostForm extends React.Component {
   }
 }
 
-export default PostForm
+export default CreatePostForm
