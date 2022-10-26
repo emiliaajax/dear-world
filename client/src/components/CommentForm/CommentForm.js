@@ -73,7 +73,7 @@ class CommentForm extends React.Component {
   }
 
   async #postComment() {
-    await new CommentsService().createPost(this.#getCommentData())
+    await new CommentsService().createComment(this.#getCommentData())
   }
 
   /**

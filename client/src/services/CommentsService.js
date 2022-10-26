@@ -6,7 +6,7 @@ export default class CommentsService {
     return await allPostComments.json()
   }
 
-  async createPost(data) {
+  async createComment(data) {
     const comment = await fetch(process.env.REACT_APP_POSTS_API + 'comments', {
       method: 'POST',
       headers: {
