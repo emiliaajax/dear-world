@@ -49,11 +49,6 @@ class Feed extends React.Component {
     return window.location.pathname.replace('/', '')
   }
 
-  /**
-   * Returns all posts as HTML elements.
-   *
-   * @returns {HTMLElement}
-   */
   renderAllPostPreviews() {
     return this.state.posts?.reverse().map((post) => {
       return (

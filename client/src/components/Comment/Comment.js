@@ -1,25 +1,24 @@
 import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material'
 import React from 'react'
-import dateFormat from 'dateformat'
+import { DateFormatter } from '../../utils/DateFormatter.js'
 
 class Comment extends React.Component {
-  /**
-   * @returns {string} 
-   */
-  getFormattedDateOfCreation() {
-    return dateFormat(new Date(this.props.comment.createdAt), 'mmmm d, yyyy')
+  #dateFormatter
+
+  constructor () {
+    super()
+    this.#dateFormatter = new DateFormatter()
   }
 
-  /**
-   * @returns {HTMLElement}
-   */
   render() {
+    const { name, comment, createdAt } = this.props.comment
+
     return (
       <>
         <Card variant='filled'>
           <CardHeader
-            title={this.props.comment.name}
-            subheader={this.getFormattedDateOfCreation()}
+            title={name}
+            subheader={this.#dateFormatter.getFormattedDate(createdAt)}
             sx={{ 
               paddingLeft: 0, 
               '.MuiCardHeader-title': { 
@@ -39,7 +38,7 @@ class Comment extends React.Component {
               paddingTop: '0px'
             }}>
             <Typography>
-              {this.props.comment.comment}
+              {comment}
             </Typography>
           </CardContent>
           <Divider 

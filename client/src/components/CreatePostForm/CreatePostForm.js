@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField'
 import { Button, FormControl, Grid, MenuItem, Select, Stack } from "@mui/material"
 import PostsService from '../../services/PostsService'
 import { emojiProvider } from 'emoji-provider'
-import { Subjects } from '../../enum/subjects.js'
+import { Subjects } from '../../utils/enum/subjects.js'
 
 class CreatePostForm extends React.Component {
   constructor(props) {
@@ -23,17 +23,17 @@ class CreatePostForm extends React.Component {
     event.preventDefault()
 
     if (this.isInvalidTitle() || this.isInvalidSubject() || this.isInvalidTextLength()) {
-      this.displayTitleError()
-      this.displaySubjectError()
-      this.displayTextError()
+      this.displayIfTitleError()
+      this.displayIfSubjectError()
+      this.displayIfTextError()
     } else {
-      const response = await new PostsService().createPost(this.getPostData())
-      this.navigateToCreatedPost(await response.id)
+      await this.createAndNavigateToPost()
     }
   }
 
-  navigateToCreatedPost(id) {
-    window.location.href = `/post/${id}`
+  async createAndNavigateToPost() {
+    const response = await new PostsService().createPost(this.getPostData())
+    window.location.href = `/post/${response.id}`
   }
 
   getPostData() {
@@ -57,19 +57,19 @@ class CreatePostForm extends React.Component {
     return this.state.text.length < 500
   }
 
-  displayTitleError() {
+  displayIfTitleError() {
     if (this.isInvalidTitle()) {
       this.setState({ titleEmpty: true })
     }
   }
 
-  displaySubjectError() {
+  displayIfSubjectError() {
     if (this.isInvalidSubject()) {
       this.setState({ subjectEmpty: true })
     }
   }
 
-  displayTextError() {
+  displayIfTextError() {
     if (this.isInvalidTextLength()) {
       this.setState({ textTooShort: true })
     }

@@ -10,9 +10,6 @@ class BaseLayout extends React.Component {
     this.#children = props.children ? props.children : null
   }
 
-  /**
-   * @returns {HTMLElement}
-   */
   render() {
     return (
       <>

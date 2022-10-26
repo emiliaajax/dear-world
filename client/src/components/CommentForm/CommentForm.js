@@ -91,9 +91,6 @@ class CommentForm extends React.Component {
     this.setState({ name: '', comment: ''})
   }
 
-  /**
-   * @returns {HTMLElement}
-   */
   render() { 
     return (
       <>

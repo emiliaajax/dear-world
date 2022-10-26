@@ -47,20 +47,48 @@ class FullPost extends React.Component {
   render() {
     return (
       <>
-       <Paper sx={{ padding: '10px', maxWidth: '800px', margin: '0 auto', boxShadow: 'none' }}>
-        <Typography variant='h3'>
+       <Paper 
+          sx={{ 
+            padding: '10px', 
+            maxWidth: '800px', 
+            margin: '0 auto', 
+            boxShadow: 'none' 
+          }}>
+        <Typography 
+          variant='h3'>
           {this.state.post.title}
         </Typography>
-        <Typography sx={{ paddingTop: '30px' }}>
+        <Typography 
+            sx={{ 
+              paddingTop: '30px' 
+            }}>
           {this.state.post.text}
         </Typography>
-        <Divider  sx={{ marginTop: '50px', borderBottomWidth: 5, color: 'rgb(0, 100, 112)' }}/>
-        <Typography variant='h4' sx={{ paddingTop: '50px' }}>{this.state.comments.length} COMMENTS</Typography>
-        <Stack spacing={3}  sx={{ marginTop: '50px' }}>
+        <Divider 
+          sx={{ 
+            marginTop: '50px', 
+            borderBottomWidth: 5, 
+            color: 'rgb(0, 100, 112)' 
+          }}/>
+        <Typography 
+          variant='h4' 
+          sx={{ 
+            paddingTop: '50px' 
+          }}>
+            {this.state.comments.length} COMMENTS
+        </Typography>
+        <Stack 
+          spacing={3}  
+          sx={{ 
+            marginTop: '50px' 
+          }}>
           {this.renderAllPostComments()}
         </Stack>
-        <Stack sx={{ marginTop: '70px' }}>
-          <CommentForm postId={this.postId}></CommentForm>
+        <Stack 
+          sx={{ 
+            marginTop: '70px' 
+          }}>
+          <CommentForm postId={this.postId} />
         </Stack>
        </Paper>
       </>
