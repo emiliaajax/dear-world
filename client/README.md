@@ -1,6 +1,8 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+1. Navigate to client folder from project root (`cd client`)
+2. Install dependencies (`npm install`)
+3. Add environment variables in `.example.env` and rename to `.env`
+4. Run the app (`npm start`)
 
 ## Available Scripts
 

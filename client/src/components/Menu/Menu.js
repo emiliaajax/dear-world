@@ -8,10 +8,7 @@ class Menu extends React.Component {
     return Object.values(Subjects).map((subject) => {
       const location = `/${subject}`
       return (
-        <MenuItem
-          key={subject}
-          component='a'
-          href={location}>
+        <MenuItem key={subject} component='a' href={location}>
           {subject}
         </MenuItem>
       )
@@ -25,15 +22,11 @@ class Menu extends React.Component {
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Stack direction='row' spacing={2} sx={{ margin: '0 auto' }}>
-                <MenuItem 
-                  component='a'
-                  href='/'>
+                <MenuItem component='a' href='/'>
                   All
                 </MenuItem>
                 {this.renderMenuItems()}
-                <MenuItem
-                  component='a'
-                  href='/create'>          
+                <MenuItem component='a' href='/create'>          
                   <ListItemIcon>
                     <AddIcon sx={{ color: 'rgb(0, 100, 112)' }} fontSize='large'/>
                   </ListItemIcon>
