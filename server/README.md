@@ -1,6 +1,5 @@
-### Installation description
-
-1. Clone the project
+## Installation
+1. Navigate to server folder from project root (`cd server`)
 2. Install dependencies (`npm install`)
-3. Add environment variables to a .dev file (see example file here)
-4. 
+3. Add environment variables in `.example.env` and rename to `.env`
+4. Run the app (`npm start`)
