@@ -1,23 +1,31 @@
-# DEAR WORLD
+# DEAR WORLD APP
 
 Ever needed a place to ventilate when things are difficult? 
 
-Dear World is a global journal online where you can ventilate your thoughts and feelings and share them with the world. It's completely anonymous and you don't need to create an account.
+Dear World is a global journal online where you can share your thoughts and feelings with the world. It's completely anonymous and you don't need to create an account.
 
 Come here to share your inner thoughts and read posts written by others.
 
-Share, Relate and Support. 
+Share, Relate and Support.
 
-## Example
+https://dearworldapp.netlify.app/
 
-Read posts
-Sort posts by category
-Love bomb posts
-Create your own posts
+## On Dear World App you can...
+
+### Read posts
+![Read posts](./images/dear-world-read.gif)
+
+### Sort posts by category
+![Sort posts](./images/dear-world-categories.gif)
+
+### Love bomb with comments (update the page to see your comment)
+![Comment posts](./images/dear-world-comment.gif)
+
+### Create your own posts
+![Create posts](./images/dear-world-create.gif)
 
 ## Installation
 
 1. Clone the repository to your local machine (`git clone git@github.com:emiliaajax/dear-world.git`)
 2. Follow the instructions to start the server application HERE.
-3. Follow the instructions to start the client application HERE.
-4. Start 
+3. Follow the instructions to start the client application HERE. 
