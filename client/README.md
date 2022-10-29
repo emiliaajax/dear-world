@@ -1,7 +1,9 @@
-## Installation
-1. Navigate to client folder from project root (`cd client`)
+# DEAR WORLD APP CLIENT
+
+## Quick Start
+1. Navigate to the client folder from the project root (`cd client`)
 2. Install dependencies (`npm install`)
-3. Add environment variables in `.example.env` and rename to `.env`
+3. Add environment variables described in `.example.env` and rename file to `.env`
 4. Run the app (`npm start`)
 
 ## Available Scripts
