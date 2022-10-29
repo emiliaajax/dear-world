@@ -16,27 +16,38 @@ The application is built with the MERN technology stack (MongoDB, Express, React
 To contribute to the project, knowledge of the technology used in the application as well as React class components is a prerequisite.
 
 Learn about React:
+<br />
 https://reactjs.org/docs/getting-started.html
 
 Learn about React class components:
+<br />
 https://www.w3schools.com/react/react_class.asp
+<br />
 https://reactjs.org/docs/components-and-props.html
+<br />
 https://www.pragimtech.com/blog/reactjs/introduction-to-class-components-in-react/
+<br />
 https://www.geeksforgeeks.org/reactjs-class-based-components/
+<br />
 
 Learn about Node:
+<br />
 https://nodejs.dev/en/learn/
 
 Learn about Express:
+<br />
 https://expressjs.com/
 
 Learn about MongoDB:
+<br />
 https://www.mongodb.com/docs/
 
 Learn about Mongoose:
+<br />
 https://mongoosejs.com/
 
 Learn about MUI:
+<br />
 https://mui.com/
 
 
