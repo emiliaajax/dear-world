@@ -37,12 +37,6 @@ When adding a new feature, make sure to add the tests and document the testing b
 - Document the tests in a test report and add it to the test report folder.
 - Create a pull request
 
-**Suggestions for future implementation**:
-
-Having admin accounts for post moderation.
-Adding possibility for users to report posts not following the guidelines.
-Automatic scanning of newly created posts using AI.
-
 # Prior knowledge
 To contribute to the project, knowledge of the technology used in the application as well as React class components is a prerequisite.
 
