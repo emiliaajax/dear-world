@@ -2,7 +2,7 @@
 
 The vision is to create an application for people who need to ventilate their feelings and thoughts. The application should be like an anonymous private diary shared with the world. The aim is for people to have a place where they could turn to if they need to feel less lonely. The user should be able to read posts created by others and create posts themselves without needing to create an account if they don't want to. The focus and theme should be on mental health.
 
-The goal is to create an application and a community that is anonymous and safe and where the posts stays on topic and where the guidelines are followed.
+The goal is to create an application and a community that is anonymous and safe and where the posts stays on topic.
 
 # Technology
 The application is built with the MERN technology stack (MongoDB, Express, React, Node), Mongoose as ODM and MUI components (https://mui.com/). The components are written as React class components.
