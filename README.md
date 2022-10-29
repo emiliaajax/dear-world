@@ -25,5 +25,5 @@ https://dearworldapp.netlify.app/
 ## Prefer to run the application locally?
 
 1. Clone the repository in a folder of your choice (`git clone git@github.com:emiliaajax/dear-world.git`)
-2. Follow the instructions to start the server application ![HERE](https://github.com/emiliaajax/dear-world/blob/main/server/README.md).
-3. Follow the instructions to start the client application ![HERE](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
+2. Follow the instructions to start the server application [HERE](https://github.com/emiliaajax/dear-world/blob/main/server/README.md).
+3. Follow the instructions to start the client application [HERE](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
