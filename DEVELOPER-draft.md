@@ -52,7 +52,7 @@ https://mui.com/
 
 
 # System Design
-![System Design](./images/system-design.png)
+![System Design](./release/images/system-design.png)
 
 # Requirements
 
