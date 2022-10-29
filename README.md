@@ -11,13 +11,13 @@ https://dearworldapp.netlify.app/
 ## On Dear World App you can...
 
 ### Read posts
-![Read posts](./images/dear-world-read.gif)
+![Read posts](./images/read.png)
 
 ### Sort posts by category
 ![Sort posts](./images/dear-world-categories.gif)
 
 ### Love bomb with comments (update the page to see your comment)
-![Comment posts](./images/dear-world-comment.gif)
+![Comment posts](./images/comment.png)
 
 ### Create your own posts
 ![Create posts](./images/dear-world-create.gif)
