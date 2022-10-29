@@ -12,7 +12,7 @@ The application is built with the MERN technology stack (MongoDB, Express, React
 
 # Requirements
 
-Requirements specification can be found in `./release/requirements.md`
+Requirements specification can be found in [`./release/requirements-specification.md`](https://github.com/emiliaajax/dear-world/blob/main/release/requirements-specification.md)
 
 When implementing a feature already specified in the requirements specification, don't forget to update its status. 
 
@@ -20,22 +20,22 @@ When adding a new feature, please add it to the requirements specification.
 
 # Testing
 
-The test specification can be found in `./release/test-specification.md`.
-The testing is done with manual test cases and test reports can be found in `testreports/`
+The test specification can be found in [`./release/test-specification.md`](https://github.com/emiliaajax/dear-world/blob/main/release/test-specification.md).
+The testing is done with manual test cases and test reports can be found in [`./release/testreports/`](https://github.com/emiliaajax/dear-world/tree/main/release/test-reports).
 
 When adding a new feature, make sure to add the tests and document the testing by adding a test report in the test reports folder.
 
 # Contributing
 
-- Fork the project
-- Install dependencies (`npm install`) on both server and client
-- Add neccessary environment variables for the server (see here)
-- Add neccessary environment variables for the client (see here)
+- Fork the project!
+- Install dependencies (`npm install`) on both server and client.
+- Add neccessary environment variables for the server described in [`./server/.example.env`](https://github.com/emiliaajax/dear-world/blob/main/server/.example.env).
+- Add neccessary environment variables for the client described in [`./client/.example.env`](https://github.com/emiliaajax/dear-world/blob/main/client/.example.env).
 - Create a new feature branch.
-- Add your new feature to the requirements specification.
-- Add tests to your feature (if manual, add them to the test specification)
-- Document the tests in a test report and add it to the test report folder.
-- Create a pull request
+- Add your new feature to [`./release/requirements-specification.md`](https://github.com/emiliaajax/dear-world/blob/main/release/requirements-specification.md).
+- Add tests to your feature (if manual, add them to [`./release/test-specification.md`](https://github.com/emiliaajax/dear-world/blob/main/release/test-specification.md)).
+- Document the tests in a test report and add to [`./release/testreports/`](https://github.com/emiliaajax/dear-world/tree/main/release/test-reports).
+- Create a pull request.
 
 # Prior knowledge
 To contribute to the project, knowledge of the technology used in the application as well as React class components is a prerequisite.
