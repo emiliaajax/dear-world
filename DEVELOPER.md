@@ -39,7 +39,7 @@ When adding a new feature, make sure to add the tests and document the testing b
 
 # Run application locally
 - [Quick start guide for the server](https://github.com/emiliaajax/dear-world/blob/main/server/README.md)
-- [Quick start guide for the client](https://github.com/emiliaajax/dear-world/blob/main/client/README.md).
+- [Quick start guide for the client](https://github.com/emiliaajax/dear-world/blob/main/client/README.md)
 
 # Prior knowledge
 To contribute to the project, knowledge of the technology used in the application as well as React class components is a prerequisite.
