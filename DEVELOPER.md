@@ -37,6 +37,10 @@ When adding a new feature, make sure to add the tests and document the testing b
 - Document the tests in a test report and add to [`./release/testreports/`](https://github.com/emiliaajax/dear-world/tree/main/release/test-reports).
 - Create a pull request.
 
+# Run application locally
+- [Quick start guide for the server](https://github.com/emiliaajax/dear-world/blob/main/server/README.md)
+- [Quick start guide for the client](https://github.com/emiliaajax/dear-world/blob/main/client/README.md).
+
 # Prior knowledge
 To contribute to the project, knowledge of the technology used in the application as well as React class components is a prerequisite.
 
