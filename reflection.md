@@ -46,15 +46,17 @@ Exempel på en radkommentar i controller.js:
 
 Jag har försökt gå efter *The Newspaper Metaphor* när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde.
 
-Jag har även tänkt mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra vertikalt sett när jag gått igenom koden. Jag har också följt råden om *Vertical Openness/Density* och tycker att koden blir betydligt mer lätt att överskåda med de reglerna.
+Se exempel från klientkoden i L2 nedan. I exemplet ser man hur det viktigaste och mest abstrakta ligger längst upp, och det mest detaljerade längre ner (metoden som inte är med finns längre upp i koden då den används av en annan metod).
+
+![Code example of the Newspaper Metaphor](./release/images/code/newspaper-metaphor.png)
+
+Jag har även tänkt mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra vertikalt sett när jag gått igenom koden. Jag har också följt råden om *Vertical Openness/Density* och tycker att koden blir betydligt mer lätt att överskåda med de reglerna. Se exempel:
+
+![Code example of vertical and horizontal openness/density](./release/images/code/verticalopenness.png)
 
 I L1 har jag valt att ha de publika metoderna överst och därefter de privata metoderna. Varje klass, förutom klassen som tillhandahåller det publika interfacet, har bara en eller två publika metoder och distansen mellan tätt associerade metoder är därmed inte för stor. Huvudklassen har ett flertal publika metoder som jag har valt att lägga överst för att en utvecklare av biblioteket lätt ska kunna få en översikt över vilka funktioner som tillhandahålls för användaren. Därefter har jag efter bästa förmåga försökt lägga de privata metoderna så att distansen inte blir för stor vertikalt sett.
 
 I L2 har jag fått kompromissa med vad som förväntas för klassbaserade React-komponenter och vad boken säger. I klasskomponenterna är det förväntat att den publika render-metoden ligger längst ner. Utöver det har jag gått efter **The Newspaper Metaphor**. Det här har gjort att den vertikala distansen mellan render-metoden och vissa metoder den anropar vid användarinteraktion har blivit ganska stor. Jag provade först att göra en omvänd Newspaper Metaphor (det vill säga att det läses nerifrån och upp) men det kändes inte naturligt. Istället valde jag att göra som boken rekommenderar med undantag för render-metoden som får ligga kvar allra längst ner i klasskomponenten. 
-
-Se exempel från klientkoden i L2 nedan. I exemplet ser man hur det viktigaste och mest abstrakta ligger längst upp, och det mest detaljerade längre ner (metoden som inte är med finns längre upp i koden då den används av en annan metod).
-
-![Code example of the Newspaper Metaphor](./release/images/code/newspaper-metaphor.png)
 
 ### Objects And Data Structures
 Jag har strävat efter att ha objekt med privata variabler och metoder som anropas. I komponenterna har jag dock en state-variabel som är publik. När den sätts privat uppdateras inte komponenterna. Jag följer *The Law of Demeter* och anropar endast metoder på de sätt som som tillåts enligt den.  
