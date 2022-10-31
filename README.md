@@ -11,16 +11,16 @@ https://dearworldapp.netlify.app/
 ## On Dear World App you can...
 
 ### Read posts
-![Read posts](./images/read.png)
+![Read posts](./release/images/read-post.png)
 
 ### Sort posts by category
-![Sort posts](./images/dear-world-categories.gif)
+![Sort posts](./release/images/sort-posts.gif)
 
 ### Love bomb with comments (update the page to see your comment)
-![Comment posts](./images/comment.png)
+![Comment posts](./release/images/comment-post.png)
 
 ### Create your own posts
-![Create posts](./images/dear-world-create.gif)
+![Create posts](./release/images/create-post.gif)
 
 ## Prefer to run the application locally?
 
