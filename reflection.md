@@ -52,7 +52,7 @@ I L1 har jag valt att ha de publika metoderna överst och därefter de privata m
 
 I L2 har jag fått kompromissa med vad som förväntas för klassbaserade React-komponenter och vad boken säger. I klasskomponenterna är det förväntat att den publika render-metoden ligger längst ner. Utöver det har jag gått efter **The Newspaper Metaphor**. Det här har gjort att den vertikala distansen mellan render-metoden och vissa metoder den anropar vid användarinteraktion har blivit ganska stor. Jag provade först att göra en omvänd Newspaper Metaphor (det vill säga att det läses nerifrån och upp) men det kändes inte naturligt. Istället valde jag att göra som boken rekommenderar med undantag för render-metoden som får ligga kvar allra längst ner i klasskomponenten. 
 
-Se exempel från klientkoden i L2 nedan. I exemplet kan man se att en metod inte finns med. Den metoden används nämligen även av en annan metod längre upp i koden. Som sagts på föreläsning, allt kan tyvärr inte ligga där man önskar. I exemplet ser man hur det viktigaste och mest abstrakta ligger längst upp, och det mest detaljerade längre ner. I #onSubmit kan man också se hur jag använt mig av vertical openness/density för att göra koden mer läsbar, samt horizontal openness.
+Se exempel från klientkoden i L2 nedan. I exemplet ser man hur det viktigaste och mest abstrakta ligger längst upp, och det mest detaljerade längre ner (metoden som inte är med finns längre upp i koden då den används av en annan metod).
 
 ![Code example of the Newspaper Metaphor](./release/images/code/newspaper-metaphor.png)
 
