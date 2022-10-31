@@ -16,17 +16,22 @@ På serversidan har jag valt att ha fulla JSDoc-kommentarer och även radkomment
 Jag har försökt balansera mellan boken och de olika konventionerna för namngivning i både React och Express.
 
 ### Formatting
-Här har jag försökt tänka på the Newspaper Metaphor när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. Det har jag följt väl främst i L1. I L2 har jag fått kompromissa med vad som förväntas när man ska skriver React-komponenter. I klassbaserade komponenter som jag skriver är det förväntat att den publika render-metoden ligger längst ner. Jag har därför istället försökt tänka mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra verikalt sett och det har resulterat i att det har blivit en omvänd Newspaper Metaphor. Jag har också följt råden om Vertical Openness/Density och tycker att koden blir betydligt mer lätt att överskåda med de reglerna. 
+Här har jag försökt tänka på the Newspaper Metaphor när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. Det har jag följt väl främst i L1. I L2 har jag fått kompromissa med vad som förväntas när man ska skriver React-komponenter. I klassbaserade komponenter som jag skriver är det förväntat att den publika render-metoden ligger längst ner. Jag har därför istället försökt tänka mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra vertikalt sett och det har resulterat i att det har blivit en omvänd Newspaper Metaphor. Jag har också följt råden om Vertical Openness/Density och tycker att koden blir betydligt mer lätt att överskåda med de reglerna.
 
 ### Objects And Data Structures
+Jag har strävat efter att ha objekt med privata variabler och metoder som anropas. I komponenterna har jag dock en state-variabel som är publik. När den sätts privat uppdateras inte komponenterna. Jag följer *The Law of Demeter* och anropar endast metoder på de sätt som som tillåts enligt den.  
 
 ### Error Handling
+Jag har gått från att jobba med booleans i min validering och har istället, efter att ha läst boken och sett föreläsningarna, börjat kasta exceptions istället. Genom att göra på det sättet upplever jag att det är lättare att separera koden så att varje metod bara gör en sak. Jag upplever också att det blir färre metoder med nästlade loopar och if-satser. Här är ett exempel på validering som görs i L1:
 
 ### Boundaries
+På klienten i L2 använder jag mig av ett paket för att formattera datum. Jag importerade först paketet direkt i komponenterna där de användes, men efter att ha läst kapitelavsnittet *Using Third-Party Code* valde jag att skapa en DateFormatter-klass som importerar paketet och istället ha en publik metod som formatterar datum på det sätt jag önskar göra i applikationen. Det minskar kodupprepning för det första, men ökar också kontroll ifall ändringar i paketet orsaker ändringar i beteende. Detta kan enkelt kontrolleras med automatiska enhetstester (som jag tyvärr inte hann lägga till i L2).
 
 ### Unit Tests
+Enhetstester i L1
 
 ### Classes
+
 
 ### Systems
 
