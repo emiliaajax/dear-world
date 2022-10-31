@@ -1,8 +1,9 @@
 # DEAR WORLD APP
 
 ## Quick Repository Navigation
-- [Reflection](https://github.com/emiliaajax/dear-world/blob/main/release/reflection.md)
 - [DEVELOPER.md](https://github.com/emiliaajax/dear-world/blob/main/DEVELOPER.md)
+- [LICENSE](https://github.com/emiliaajax/dear-world/blob/main/LICENSE)
+- [Reflection](https://github.com/emiliaajax/dear-world/blob/main/release/reflection.md)
 - [Requirements specification](https://github.com/emiliaajax/dear-world/blob/main/release/requirements-specification.md)
 - [Test specification](https://github.com/emiliaajax/dear-world/blob/main/release/test-specification.md)
 - [Test reports](https://github.com/emiliaajax/dear-world/tree/main/release/test-reports)
