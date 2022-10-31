@@ -7,7 +7,9 @@ Det här kapitlet har varit en ögonöppnare som, enligt mig själv, har gjort m
 När jag har gått efter rådet om att ha en abstraktionsnivå per funktion så tycker jag att råden om att funktionerna ska vara så små som möjligt (*Small!*) och att de ska göra en sak (*Do One Thing*) per automatik har uppfyllts. Det har resulterat i att mina metoder alla är under 10 rader (när man räknar bort mellanrum och radbrytningar som är gjorda för läsbarhetens skull).
 
 Två exempel, från klientkoden i L2, på metoder av hög abstraktionsnivå:
+
 ![Function of high abstraction level](./release/images/code/function-1.png)
+
 ![Function of high abstraction level](./release/images/code/function-2.png)
 
 ### Comments
