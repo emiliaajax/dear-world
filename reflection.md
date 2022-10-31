@@ -3,9 +3,9 @@ Jag har följt Jag har försökt balansera mellan boken och de olika konventione
 
 
 ### Functions
-Det här kapitlet har varit en ögonöppnare som, enligt mig själv, har gjort min kod mer ren. Jag har försökt följa rådet om att ha *One Level of Abstraction per Function* och tycker själv att jag har utvecklats under kursens gång och att slutresultatet har blivit ganska bra. Det är inte perfekt, men kvaliteten på min kod är betydligt bättre än innan jag läste den här kursen. 
+Det här kapitlet har varit en ögonöppnare som, enligt mig själv, har gjort min kod mer ren. Jag har försökt följa rådet om att ha **One Level of Abstraction per Function** och tycker själv att jag har utvecklats under kursens gång och att slutresultatet har blivit ganska bra. Det är inte perfekt, men kvaliteten på min kod är betydligt bättre än innan jag läste den här kursen. 
 
-När jag har gått efter rådet om att ha en abstraktionsnivå per funktion så tycker jag att råden om att funktionerna ska vara så små som möjligt (*Small!*) och att de ska göra en sak (*Do One Thing*) per automatik har uppfyllts. Det har resulterat i att mina metoder alla är under 10 rader (när man räknar bort mellanrum och radbrytningar som är gjorda för läsbarhetens skull).
+När jag har gått efter rådet om att ha en abstraktionsnivå per funktion så tycker jag att råden om att funktionerna ska vara så små som möjligt (**Small!**) och att de ska göra en sak (**Do One Thing**) per automatik har uppfyllts. Det har resulterat i att mina metoder alla är under 10 rader (när man räknar bort mellanrum och radbrytningar som är gjorda för läsbarhetens skull).
 
 Två exempel, från klientkoden i L2, på metoder av hög abstraktionsnivå:
 
@@ -14,9 +14,9 @@ Två exempel, från klientkoden i L2, på metoder av hög abstraktionsnivå:
 ![Function of high abstraction level](./release/images/code/function-2.png)
 
 ### Comments
-När det gäller kommentarer har jag försökt utmana mig själv. I tidigare kurser har vi varit tvungna att skriva kommentarer till varje metod och det är svårt att bryta sig ur det tankesättet. Men nu har jag försökt att fullt ut gå efter *Explain Yourself in Code* och bokens devis om att minimera kommentarer.
+När det gäller kommentarer har jag försökt utmana mig själv. I tidigare kurser har vi varit tvungna att skriva kommentarer till varje metod och det är svårt att bryta sig ur det tankesättet. Men nu har jag försökt att fullt ut gå efter **Explain Yourself in Code** och bokens devis om att minimera kommentarer.
 
-I L1 använder jag mig av JSDoc-kommentarer för metoderna i det publika interfacet då att kommentera publika API är ansett som en bra kommentar.
+I L1 använder jag mig av JSDoc-kommentarer för metoderna i det publika interfacet då att kommentera publika API är ansett som en bra kommentar enligt kapitelavsnittet **Good Comments**.
 
 ![Comment for a method in the public interface](./release/images/code/public-method-comment.png)
 
@@ -24,20 +24,26 @@ Annars använder jag JSDoc främst för att tala om typer på parametrar och ret
 
 ![JSDoc comment with only param desribed](./release/images/code/jsdoc-light.png)
 
-I L2 på klientsidan har jag tagit steget längre och har på de flesta ställen utelämnat kommentarer helt där jag inte tycker att det verkligen behövs. Som nämnt så tar det emot av ren vana men efter att ha läst boken och i tillägg läst om best practices för att kommentera React komponenter (där många faktiskt refererar till Clean Code och skriver att kommentarer förstör det naturliga flödet när man skriver komponenter i React) så har jag valt att endast kommentera där jag verkligen tycker att det behövs. Jag har bland annat använt mig av *Explanation of Intent*-kommentarer om en nödlösning som användes på flera ställen i min kod (en lösning som jag läste inte var så bra praxis att använda sig av) när inget annat fungerade.
+I L2 på klientsidan har jag tagit steget längre och har på de flesta ställen utelämnat kommentarer helt där jag inte tycker att det verkligen behövs. Som nämnt så tar det emot av ren vana men efter att ha läst boken och i tillägg läst om best practices för att kommentera React komponenter (där många faktiskt refererar till Clean Code och skriver att kommentarer förstör det naturliga flödet när man skriver komponenter i React) så har jag valt att endast kommentera där jag verkligen tycker att det behövs. Jag har bland annat använt mig av **Explanation of Intent**-kommentarer om en nödlösning som användes på flera ställen i min kod (en lösning som jag läste inte var så bra praxis att använda sig av) när inget annat fungerade.
 
 ![Explanation of Intent](./release/images/code/intent-comment.png)
+
+I tillägg har jag också valt att ha informativa kommentarer på vissa ställen där jag ger information/exempel som inte kan uttryckas i ett metodnamn.
+
+![Informative comment](./release/images/code/informative-comment.png)
 
 På serversidan har jag valt att ha fulla JSDoc-kommentarer och även radkommentarer i konfigurationer. Radkommentarerna kanske skulle kunna klassas som redundanta enligt Clean Code, men i och med att jag själv har svårt att komma ihåg vad konfigurationerna innebär så valde jag att ha kvar det. 
 
 Exempel på en radkommentar i server.js:
+
 ![Comment in server configuration](./release/images/code/config-comment.png)
 
 Exempel på en radkommentar i controller.js:
+
 ![Comment in controller in REST API](./release/images/code/rest-api-comment.png)
 
 ### Formatting
-I har jag gått efter the Newspaper Metaphor när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. 
+Jag har försökt gå efter *The Newspaper Metaphor* när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. 
 
 Jag har tänkt mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra vertikalt sett. Jag har också följt råden om *Vertical Openness/Density* och tycker att koden blir betydligt mer lätt att överskåda med de reglerna.
 
