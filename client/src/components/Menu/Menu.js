@@ -4,7 +4,7 @@ import { Subjects } from '../../utils/enum/subjects.js'
 import AddIcon from '@mui/icons-material/Add.js'
 
 class Menu extends React.Component {
-  renderMenuItems() {
+  #renderMenuItems() {
     return Object.values(Subjects).map((subject) => {
       const location = `/${subject}`
       return (
@@ -25,7 +25,7 @@ class Menu extends React.Component {
                 <MenuItem component='a' href='/'>
                   All
                 </MenuItem>
-                {this.renderMenuItems()}
+                {this.#renderMenuItems()}
                 <MenuItem component='a' href='/create'>          
                   <ListItemIcon>
                     <AddIcon sx={{ color: 'rgb(0, 100, 112)' }} fontSize='large'/>

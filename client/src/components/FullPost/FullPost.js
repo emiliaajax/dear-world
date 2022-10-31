@@ -6,10 +6,12 @@ import Comment from '../Comment/Comment.js'
 import CommentForm from '../CommentForm/CommentForm.js'
 
 class FullPost extends React.Component {
+  #postId
+
   constructor () {
     super()
 
-    this.postId = this.getIdFromUrl()
+    this.#postId = this.#getIdFromUrl()
     
     this.state = {
       post: {},
@@ -19,24 +21,24 @@ class FullPost extends React.Component {
 
   async componentDidMount() {
     this.setState({ 
-      post: await this.getPostById(),
-      comments: await this.getAllPostComments(),
+      post: await this.#getPostById(),
+      comments: await this.#getAllPostComments(),
     })
   }
 
-  getIdFromUrl () {
+  #getIdFromUrl () {
     return window.location.pathname.replace('/post/', '')
   }
 
-  async getPostById() {
-    return await new PostsService().getPostById(this.postId)
+  async #getPostById() {
+    return await new PostsService().getPostById(this.#postId)
   }
 
-  async getAllPostComments() {
-    return await new CommentsService().getAllPostComments(this.postId)
+  async #getAllPostComments() {
+    return await new CommentsService().getAllPostComments(this.#postId)
   }
 
-  renderAllPostComments() {
+  #renderAllPostComments() {
     return this.state.comments?.map((comment) => {
       return (
         <Comment key={comment._id} comment={comment}></Comment>
@@ -82,13 +84,13 @@ class FullPost extends React.Component {
           sx={{ 
             marginTop: '50px' 
           }}>
-          {this.renderAllPostComments()}
+          {this.#renderAllPostComments()}
         </Stack>
         <Stack 
           sx={{ 
             marginTop: '70px' 
           }}>
-          <CommentForm postId={this.postId} />
+          <CommentForm postId={this.#postId} />
         </Stack>
        </Paper>
       </>

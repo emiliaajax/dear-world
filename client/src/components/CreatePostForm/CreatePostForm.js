@@ -19,24 +19,84 @@ class CreatePostForm extends React.Component {
     }
   }
 
-  onSubmit = async (event) => {
-    event.preventDefault()
+  #onChange = (event) => { 
+    this.#updatePostFormState(event)
+    this.#updateEmptyTitleState(event)
+    this.#updateTextLengthState(event)
+  }
 
-    if (this.isInvalidTitle() || this.isInvalidSubject() || this.isInvalidTextLength()) {
-      this.displayIfTitleError()
-      this.displayIfSubjectError()
-      this.displayIfTextError()
-    } else {
-      await this.createAndNavigateToPost()
+  #updatePostFormState (event) {
+    this.setState((previousState) => ({
+      ...previousState,
+      [event.target.name]: event.target.value
+    }))
+  }
+
+  #updateEmptyTitleState (event) {
+    if (event.target.name === 'title') {
+      this.setState({ titleEmpty: false })
     }
   }
 
-  async createAndNavigateToPost() {
-    const response = await new PostsService().createPost(this.getPostData())
+  #updateTextLengthState (event) {
+    if (event.target.name === 'text' && this.state.text.length > 500) {
+      this.setState({ textTooShort: false })
+    } 
+  }
+
+  #onSubjectChange = (event) => {
+    this.setState({ subject: event.target.value })
+    this.setState({ subjectEmpty: false })
+  }
+
+  #onSubmit = async (event) => {
+    event.preventDefault()
+
+    if (this.#isInvalidTitle() || this.#isInvalidSubject() || this.#isInvalidTextLength()) {
+      this.#displayIfTitleError()
+      this.#displayIfSubjectError()
+      this.#displayIfTextError()
+    } else {
+      await this.#createAndNavigateToPost()
+    }
+  }
+
+  #isInvalidTitle() {
+    return this.state.title.trim().length === 0
+  }
+
+  #isInvalidSubject() {
+    return this.state.subject.length === 0
+  }
+
+  #isInvalidTextLength() {
+    return this.state.text.length < 500
+  }
+
+  #displayIfTitleError() {
+    if (this.#isInvalidTitle()) {
+      this.setState({ titleEmpty: true })
+    }
+  }
+
+  #displayIfSubjectError() {
+    if (this.#isInvalidSubject()) {
+      this.setState({ subjectEmpty: true })
+    }
+  }
+
+  #displayIfTextError() {
+    if (this.#isInvalidTextLength()) {
+      this.setState({ textTooShort: true })
+    }
+  }
+
+  async #createAndNavigateToPost() {
+    const response = await new PostsService().createPost(this.#getPostData())
     window.location.href = `/post/${response.id}`
   }
 
-  getPostData() {
+  #getPostData() {
     return {
       author: this.state.author.trim() ? this.state.author : 'Anonymous',
       subject: this.state.subject,
@@ -45,67 +105,7 @@ class CreatePostForm extends React.Component {
     }
   }
 
-  isInvalidTitle() {
-    return this.state.title.trim().length === 0
-  }
-
-  isInvalidSubject() {
-    return this.state.subject.length === 0
-  }
-
-  isInvalidTextLength() {
-    return this.state.text.length < 500
-  }
-
-  displayIfTitleError() {
-    if (this.isInvalidTitle()) {
-      this.setState({ titleEmpty: true })
-    }
-  }
-
-  displayIfSubjectError() {
-    if (this.isInvalidSubject()) {
-      this.setState({ subjectEmpty: true })
-    }
-  }
-
-  displayIfTextError() {
-    if (this.isInvalidTextLength()) {
-      this.setState({ textTooShort: true })
-    }
-  }
-
-  onChange = (event) => { 
-    this.updatePostFormState(event)
-    this.updateEmptyTitleState(event)
-    this.updateTextLengthState(event)
-  }
-
-  updatePostFormState (event) {
-    this.setState((previousState) => ({
-      ...previousState,
-      [event.target.name]: event.target.value
-    }))
-  }
-
-  updateEmptyTitleState (event) {
-    if (event.target.name === 'title') {
-      this.setState({ titleEmpty: false })
-    }
-  }
-
-  updateTextLengthState (event) {
-    if (event.target.name === 'text' && this.state.text.length > 500) {
-      this.setState({ textTooShort: false })
-    } 
-  }
-
-  onSubjectChange = (event) => {
-    this.setState({ subject: event.target.value })
-    this.setState({ subjectEmpty: false })
-  }
-
-  renderMenuItems() {
+  #renderSubjectOptions() {
     return Object.values(Subjects).map((subject) => {
       return (
         <MenuItem value={subject}>
@@ -118,7 +118,7 @@ class CreatePostForm extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={(event) => this.onSubmit(event)}>
+        <form onSubmit={(event) => this.#onSubmit(event)}>
           <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto' }}>
             <Grid item xs={10}>
               <Stack spacing={2}>
@@ -130,7 +130,7 @@ class CreatePostForm extends React.Component {
                       size='small'
                       name='author'
                       value={this.state.author}
-                      onChange={this.onChange}>
+                      onChange={this.#onChange}>
                     </TextField>
                   </Grid>
                   <Grid item xs={6}>
@@ -145,9 +145,9 @@ class CreatePostForm extends React.Component {
                           : ''
                         }
                         value={this.state.subject}
-                        onChange={this.onSubjectChange}
+                        onChange={this.#onSubjectChange}
                       >
-                        {this.renderMenuItems()}
+                        {this.#renderSubjectOptions()}
                       </Select>
                     </FormControl>
                   </Grid>
@@ -159,7 +159,7 @@ class CreatePostForm extends React.Component {
                   error={this.state.titleEmpty ? true : false}
                   helperText={this.state.titleEmpty ? 'Your post needs a title' : ''}
                   value={this.state.title}
-                  onChange={this.onChange}>
+                  onChange={this.#onChange}>
                 </TextField>
                 <TextField
                   multiline
@@ -168,7 +168,7 @@ class CreatePostForm extends React.Component {
                   error={this.state.textTooShort ? true : false}
                   helperText={this.state.textTooShort ? 'Your post needs to be at least 500 characters...' : ''}
                   value={this.state.text}
-                  onChange={this.onChange}>
+                  onChange={this.#onChange}>
                 </TextField>
               </Stack>
             </Grid>

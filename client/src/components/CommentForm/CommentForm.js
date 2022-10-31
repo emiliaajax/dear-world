@@ -6,29 +6,22 @@ import { emojiProvider } from 'emoji-provider'
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       name: '',
       comment: '',
-      commentEmpty: false,
+      validComment: true,
     }
   }
   
-  /**
-   * Updates states whenever the comment form receives input.
-   *
-   * @param {InputEvent} event 
-   */
   #onChange = (event) => {
     this.#updateState(event)
     
-    if (this.#isCommentTheEventTarget(event)) {
-      this.#updateIsCommentEmptyState(false)
+    if (this.#isChangeInCommentText(event)) {
+      this.#updateIsValidCommentState(true)
     }
   }
 
-  /**
-   * @param {InputEvent} event 
-   */
   #updateState(event) {
     this.setState((previousState) => ({
       ...previousState,
@@ -36,38 +29,25 @@ class CommentForm extends React.Component {
     }))
   }
 
-  /**
-   * @param {InputEvent} event 
-   * @returns {boolean}
-   */
-  #isCommentTheEventTarget(event) {
+  #isChangeInCommentText(event) {
     return event.target.name === 'comment'
   }
 
-  /**
-   * @param {boolean} status 
-   */
-  #updateIsCommentEmptyState (status) {
-    this.setState({ commentEmpty: status })
+  #updateIsValidCommentState (status) {
+    this.setState({ validComment: status })
   }
 
-  /**
-   * @param {SubmitEvent} event 
-   */
   #onSubmit = async (event) => {
     event.preventDefault()
 
     if (this.#isInvalidComment()) {
-      this.#updateIsCommentEmptyState(true)
+      this.#updateIsValidCommentState(false)
     } else {
       await this.#postComment()
       this.#resetCommentForm()
     }
   }
 
-  /**
-   * @returns {boolean}
-   */
   #isInvalidComment() {
     return this.state.comment.trim().length === 0
   }
@@ -76,9 +56,6 @@ class CommentForm extends React.Component {
     await new CommentsService().createComment(this.#getCommentData())
   }
 
-  /**
-   * @returns {object}
-   */
   #getCommentData () {
     return {
       postId: this.props.postId,
@@ -118,8 +95,8 @@ class CommentForm extends React.Component {
               name='comment'
               value={this.state.comment}
               onChange={this.#onChange}
-              error={this.state.commentEmpty ? true : false}
-              helperText={this.state.commentEmpty ? 'Your comment is empty' : ''}
+              error={this.state.validComment ? true : false}
+              helperText={this.state.validComment ? '' : 'Your comment is empty'}
               placeholder='Comment'
               multiline
               rows={10} 

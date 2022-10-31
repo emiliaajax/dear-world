@@ -14,7 +14,7 @@ class PostPreview extends React.Component {
     const { title, author, subject, createdAt, text, _id } = this.props.post
   
     const location = `/post/${_id}`
-    const textPreview = text.slice(0, 500)
+    const textPreview = text.slice(0, 500) + '...'
     const date = this.#dateFormatter.getFormattedDate(createdAt)
     const subHeaderText = `${author} in ${subject} · ${date}`
 

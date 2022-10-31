@@ -1,4 +1,6 @@
-
+/**
+ * Encapsulates calls to posts API related to posts.
+ */
 export default class PostsService {
   async getAllPosts() {
     const allPosts = await fetch(process.env.REACT_APP_POSTS_API)

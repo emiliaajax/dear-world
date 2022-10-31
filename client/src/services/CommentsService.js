@@ -1,4 +1,6 @@
-
+/**
+ * Encapsulates calls to posts API related to comments.
+ */
 export default class CommentsService {
   async getAllPostComments(id) {
     const allPostComments = await fetch(process.env.REACT_APP_POSTS_API + `comments/${id}`)

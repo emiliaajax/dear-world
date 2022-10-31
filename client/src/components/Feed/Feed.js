@@ -13,43 +13,43 @@ class Feed extends React.Component {
   }
 
   async componentDidMount() {
-    if (this.isHomePage()) {
-      this.updateHomePageFeed()
+    if (this.#isHomePage()) {
+      this.#updateHomePageFeed()
     } else {
-      this.updateSubjectPageFeed()
+      this.#updateSubjectPageFeed()
     }
   }
 
-  isHomePage() {
-    // Not a good solution, but couldn't find a way to navigate
-    // without using the window object.
+  #isHomePage() {
+    // Probably not a good solution to tamper with the window object, 
+    // but couldn't find a way to navigate without using the window object.
     return window.location.pathname === '/'
   }
 
-  async updateHomePageFeed () {
-    this.setState({ posts: await this.getAllPosts() })
+  async #updateHomePageFeed () {
+    this.setState({ posts: await this.#getAllPosts() })
   }
 
-  async getAllPosts() {
+  async #getAllPosts() {
     return await new PostsService().getAllPosts()
   }
 
-  async updateSubjectPageFeed () {
-    this.setState({ posts: await this.getPostsBySubject() })
+  async #updateSubjectPageFeed () {
+    this.setState({ posts: await this.#getPostsBySubject() })
   }
 
-  async getPostsBySubject() {
-    const subject = this.getSubject()
+  async #getPostsBySubject() {
+    const subject = this.#getSubject()
     return await new PostsService().getPostsBySubject(subject)
   }
 
-  getSubject() {
-    // Not a good solution, but couldn't find a way to get params
-    // without using the window object.
+  #getSubject() {
+    // Probably not a good solution to tamper with the window object, 
+    // but couldn't find a way to get params without using the window object.
     return window.location.pathname.replace('/', '')
   }
 
-  renderAllPostPreviews() {
+  #renderAllPostPreviews() {
     return this.state.posts?.reverse().map((post) => {
       return (
         <Grid key={post._id} item xs={4}>
@@ -63,7 +63,7 @@ class Feed extends React.Component {
     return (
       <>
         <Grid container spacing={5}>
-          {this.renderAllPostPreviews()}
+          {this.#renderAllPostPreviews()}
         </Grid>
       </>
     )
