@@ -16,7 +16,7 @@ Exempel från klientkoden i L2 på en metod av hög abstraktionsnivå:
 
 ![Function of high abstraction level](./release/images/code/high-abstraction-level.png)
 
-Jag tror dessvärre att jag har, om jag förstått rätt, sidoeffekter i en metod i L1. Detta kom sig av att jag började dela upp koden i mindre metoder från en metod som var djupt nästlad samtidigt som jag försökte skapa metoder som inte har några argument. I exemplet nedan uppdaterar jag den nuvarande emojin och den nuvarande emoticon. Detta påverkar dock egentligen ingenting men jag är osäker på om det potentiellt skulle kunna skapa problem. Jag anser dock inte att det är en ändring som är oväntad.
+Jag tror dessvärre att jag har, om jag förstått rätt, sidoeffekter i en metod i L1. Detta kom sig av att jag började dela upp koden i mindre metoder från en metod som var djupt nästlad samtidigt som jag försökte skapa metoder som inte har några argument (för att citera boken: *"The ideal number of arguments for a function is zero"*). I exemplet nedan uppdaterar jag den nuvarande emojin och den nuvarande emoticon. Detta påverkar dock egentligen ingenting men jag är osäker på om det potentiellt skulle kunna skapa problem. Jag anser dock inte att det är en ändring som är oväntad.
 
 ![Method with potential side effect](./release/images/code/method-side-effect.png)
 
