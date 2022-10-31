@@ -1,4 +1,4 @@
-# Testspecifikation
+# Test specification
 
 ## What is tested and how?
 The testing is done with manual test cases of the requirements that are implemented. The requirements that doesn't have any test cases are yet to be implemented.

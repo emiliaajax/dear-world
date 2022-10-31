@@ -53,3 +53,12 @@ Have something to share? Need to write something of your chest? On Dear World, y
 1. Clone the repository in a folder of your choice (`git clone git@github.com:emiliaajax/dear-world.git`)
 2. Follow the instructions to start the server application [HERE](https://github.com/emiliaajax/dear-world/blob/main/server/README.md).
 3. Follow the instructions to start the client application [HERE](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
+
+## Quick Repository Navigation
+- [Reflection](https://github.com/emiliaajax/dear-world/blob/main/reflection.md)
+- [DEVELOPER.md](https://github.com/emiliaajax/dear-world/blob/main/DEVELOPER.md)
+- [Requirements specification](https://github.com/emiliaajax/dear-world/blob/main/release/requirements-specification.md)
+- [Test specification](https://github.com/emiliaajax/dear-world/blob/main/release/test-specification.md)
+- [Test reports](https://github.com/emiliaajax/dear-world/tree/main/release/test-reports)
+- [Client code](https://github.com/emiliaajax/dear-world/tree/main/client)
+- [Server code](https://github.com/emiliaajax/dear-world/tree/main/server)

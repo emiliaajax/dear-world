@@ -19,3 +19,9 @@
 | 9 | An authenticated user should be able to edit its own posts | 2 | :heavy_minus_sign: |
 | 10 | An authenticated user should be able to remove its own posts | 2 | :heavy_minus_sign: |
 | 11 | An authenticated user should be able to save their favorite posts | 2 | :heavy_minus_sign: |
+
+### **Functional requirements**
+
+| Requirement | Description | Priority | Status |
+|------|-------------|-----------|---------|
+| 12 | The application should be responsive | 2 | :heavy_minus_sign: |
