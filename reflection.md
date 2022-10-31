@@ -1,3 +1,38 @@
+# Reflektion
+
+## Länkar 
+### L1
+- [Repositorium](https://github.com/emiliaajax/emoji-provider)
+- [README.md](https://github.com/emiliaajax/emoji-provider/blob/main/README.md)
+- [DEVELOPER.md](https://github.com/emiliaajax/emoji-provider/blob/main/DEVELOPER.md)
+- [npm för biblioteket](https://www.npmjs.com/package/emoji-provider)
+
+### L2
+- [README.md](https://github.com/emiliaajax/dear-world/blob/main/README.md)
+- [DEVELOPER.md](https://github.com/emiliaajax/dear-world/blob/main/DEVELOPER.md)
+- [Driftsatt applikation](https://dearworldapp.netlify.app/)
+
+## Begränsningar
+Jag har valt att göra en fullstack-applikation där jag skriver klientsidekoden med klassbaserade React-komponenter och serversidekoden med Node, ExpressJS och MongoDb.
+
+Först och främst vill jag nämnda att jag på serversidan har gått efter en kodmall som jag har lärt mig i tidigare kurser och som jag även använde i mitt mjukvaruutvecklingsprojekt. Koden är alltså *identisk* med hur jag har gjort tidigare när det kommer till konfigurationer av server och databas. Jag har endast modifierat det som är unikt för denna applikation, nämligen models, controllers och routes. Kommentarer är skrivna på samma sätt som jag skrivit de tidigare, men självklart modifierade för den här applikationen.
+
+Fokus i den här laborationen har främst legat på klientsidan. Jag valde som sagt att skriva komponenter med hjälp av React och valde att göra det med hjälp av klasser för att det var ett krav för uppgiften. Detta har inte varit helt enkelt då det vanligaste nuförtiden är att skriva funktionsbaserade komponenter och felsökningar har därför tagit mer tid och energi än jag hade trott.
+
+Jag har heller inte alltid kunnat följa boken så till punkt och pricka som kanske hade varit önskvärt i och med att jag också vill hålla mig till hur React-komponenter vanligtvis byggs upp för att det inte ska vara förvirrande för andra utvecklare.
+
+En positiv sak som har kommit av att jag valde att använda mig av ett JS-ramverk är att jag verkligen har varit tvungen att sätta mig in djupare i bokens innehåll för att kombinera det med React och försöka hitta en bra mellanväg. Jag har verkligen reflekterat över min kod och behövt läsa bokens innehåll flera gånger om. Det är många gånger jag har önskat att jag valde ett projekt i Java istället, men jag är samtidigt glad att jag inte gjorde det. Jag upplever verkligen att jag har lärt mig väldigt mycket genom utmaningen av att använda ett ramverk och jag tycker verkligen att det har gått att kombinera till slut. 
+
+Jag har verkligen fått använda, och haft nytta av, råden och reglerna i boken vilket beskrivs mer utförligt i kapitelreflektionerna.
+
+## Förbättringar av L1
+Efter feedback på L1 har jag utökat README.md som rekommenderat. Jag har inte lagt till fler tester i brist på tid, men jag håller med om att det hade varit bra om jag testat mer specifikt och det är definitivt något jag ska tänka på om jag fortsätter att vidareutveckla biblioteket. 
+
+Jag har även omorganiserat koden efter att ha läst kapitlet *Formatting* och ändrat i kommentarer. Småförbättringar har gjorts överlag för att åka kodkvaliteten.
+
+## Kapitelreflektioner
+Dessa kapitelreflektioner behandlar både koden i L1 och 
+
 ### Meaningful Names
 Jag har försökt följa de flesta råden i boken för namngivning och har främst fokuserat på att namnen ska vara *Intention Revealing*, *Pronouncable* och *Searchable* och har inte varit rädd för att ha långa namn om det behövs. 
 
