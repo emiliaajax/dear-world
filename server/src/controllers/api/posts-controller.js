@@ -20,6 +20,13 @@ export class PostsController {
     }
   }
 
+  /**
+   * Sends a JSON response containing all posts by subject.
+   *
+   * @param {object} req Express request object.
+   * @param {object} res Express response object.
+   * @param {Function} next Express next middleware function.
+   */
   async findPostsBySubject (req, res, next) {
     try {
       const posts = await Post.find({ subject: req.params.subject })

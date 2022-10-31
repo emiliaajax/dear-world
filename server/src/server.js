@@ -15,6 +15,7 @@ try {
   // Sets HTTP headers to make application more secure.
   app.use(helmet())
 
+  // Sets cors headers.
   app.use(cors())
 
   // Sets up a morgan logger using the dev format for log entries.
