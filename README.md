@@ -1,6 +1,6 @@
 # DEAR WORLD APP
 
-### ** ***BETA VERSION*** **
+#### ** ***BETA VERSION*** **
 
 Dear World App is a global journal online where you can share your thoughts and feelings with the world. It's completely anonymous and you don't need to create an account.
 
@@ -10,7 +10,7 @@ Share, Relate and Support. On Dear World App, you are not alone!
 
 https://dearworldapp.netlify.app/ 
 
-## On Dear World App you can...
+## ON DEAR WORLD APP YOU CAN...
 
 ### Read posts
 Read posts created by people from all over the world. Whenever you're feeling alone in the world, read pieces written by others and feel comfort in knowing that someone else goes through something similar. Find your support.
