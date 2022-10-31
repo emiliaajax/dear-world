@@ -1,6 +1,6 @@
 # DEAR WORLD APP
 
-### **BETA VERSION**
+### ** ***BETA VERSION*** **
 
 Dear World App is a global journal online where you can share your thoughts and feelings with the world. It's completely anonymous and you don't need to create an account.
 
