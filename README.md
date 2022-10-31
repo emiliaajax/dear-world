@@ -9,7 +9,7 @@
 - [Client code](https://github.com/emiliaajax/dear-world/tree/main/client)
 - [Server code](https://github.com/emiliaajax/dear-world/tree/main/server)
 
-#### ** ***BETA VERSION*** **
+## ** ***BETA VERSION*** **
 
 Dear World App is a global journal online where you can share your thoughts and feelings with the world. It's completely anonymous and you don't need to create an account.
 
@@ -60,5 +60,5 @@ Have something to share? Need to write something of your chest? On Dear World, y
 ## Prefer to run the application locally?
 
 1. Clone the repository in a folder of your choice (`git clone git@github.com:emiliaajax/dear-world.git`)
-2. Follow the instructions to start the server application [HERE](https://github.com/emiliaajax/dear-world/blob/main/server/README.md).
-3. Follow the instructions to start the client application [HERE](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
+2. [Quick start guide for the server](https://github.com/emiliaajax/dear-world/blob/main/server/README.md).
+3. [Quick start guide for the client](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
