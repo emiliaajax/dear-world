@@ -43,7 +43,9 @@ Exempel på en radkommentar i controller.js:
 ![Comment in controller in REST API](./release/images/code/rest-api-comment.png)
 
 ### Formatting
-Jag har försökt gå efter *The Newspaper Metaphor* när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. 
+Jag har försökt gå efter *The Newspaper Metaphor* när jag skrivit min kod. Att det viktigaste och mest övergripande kommer först och det detaljerade sist, och att man ska kunna läsa uppifrån och ner i ett naturligt flöde. Exempel från klientkoden i L2 (i exemplet kan man se att en metod inte finns med. Den metoden används nämligen även av en annan metod ovanför längre upp i koden. Som sagts på föreläsning, allt kan tyvärr inte ligga nära):
+
+![Code example of the Newspaper Metaphor](./release/images/code/newspaper-metaphor.png)
 
 Jag har tänkt mycket på *Vertical Distance* och att metoder som är nära relaterade ska ligga nära varandra vertikalt sett. Jag har också följt råden om *Vertical Openness/Density* och tycker att koden blir betydligt mer lätt att överskåda med de reglerna.
 
