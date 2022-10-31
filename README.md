@@ -55,7 +55,7 @@ Have something to share? Need to write something of your chest? On Dear World, y
 3. Follow the instructions to start the client application [HERE](https://github.com/emiliaajax/dear-world/blob/main/client/README.md). 
 
 ## Quick Repository Navigation
-- [Reflection](https://github.com/emiliaajax/dear-world/blob/main/reflection.md)
+- [Reflection](https://github.com/emiliaajax/dear-world/blob/main/release/reflection.md)
 - [DEVELOPER.md](https://github.com/emiliaajax/dear-world/blob/main/DEVELOPER.md)
 - [Requirements specification](https://github.com/emiliaajax/dear-world/blob/main/release/requirements-specification.md)
 - [Test specification](https://github.com/emiliaajax/dear-world/blob/main/release/test-specification.md)
