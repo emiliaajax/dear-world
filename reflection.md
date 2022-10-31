@@ -116,3 +116,16 @@ I övrigt skulle jag påstå att mina klasser och komponenter har både low coup
 
 ### Systems
 
+Jag anser att jag har en väl uppdelad systemarkitektur som tar hänsyn till *Separation of Concerns* och *Optimize Decision Making*.
+
+Serversidekoden är helt separerad från klientsidekoden. Se arkitektur:
+
+![System architecture](./release/images/system-design.png)
+
+På serversidan är koden (förutom konfigurationer) uppdelad i models, controllers och routes som har varsitt ansvarsområde.
+
+På klientsidan är koden uppdelad i komponenter, där varje komponent endast ansvarar för det som sker inuti den komponenten. Jag har även separerat anrop till API från komponenterna så att detta görs i separata klasser. Jag har också en `utils`-mapp med klasser som ansvarar för vissa funktioner som till exempel, i detta fall, formattering av datum och enums.
+
+I `index.html` importeras endast `index.js` som endast importerar komponenten `App`. I `App`-komponenten sätts därefter alla routes upp.
+
+Detta gör att det är möjligt att skala upp (*Scaling Up*) relativt smärtfritt. För att skala upp på serversidan kan flera services läggas till så att man bygger upp det som en microservice-arkitektur, alternativt kan man lägga till fler models, controllers och routes utan att behöva ändra i konfigurationen i den existerande servicen. Fler klasser kan skapas på klienten som anropar APIerna och komponenter kan läggas till med ny funktionalitet genom att lägga till den med en route i `App`-komponenten exempelvis.
